@@ -1,0 +1,28 @@
+{
+    "name": "artisan/outline",
+    "description": "An admin package for Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jaggy Gauran",
+            "email": "jaggy@artisan.studio"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Artisan\\Outline\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Artisan\\Outline\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
