@@ -11,4 +11,13 @@ class LoginTest extends TestCase
     {
         $this->get('/cp/login')->assertSuccessful();
     }
+
+    /** @test **/
+    function login_and_redirect_to_the_dashboard()
+    {
+        $this->post('/cp/login', [
+            'email' => 'jaggy@artisan.studio',
+            'password' => 'password'
+        ])->assertRedirect('/cp/dashboard');
+    }
 }
