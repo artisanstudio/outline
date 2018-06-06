@@ -1,0 +1,12 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, .app, .sidebar {
+    min-height: 100vh;
+}
+
+.link {
+    @apply no-underline text-grey-darker;
+}

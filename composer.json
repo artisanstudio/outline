@@ -9,7 +9,12 @@
             "email": "jaggy@artisan.studio"
         }
     ],
-    "require": {},
+    "require": {
+        "nothingworks/blade-svg": "^0.2.2"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6"
+    },
     "autoload": {
         "psr-4": {
             "Artisan\\Outline\\": "src"
@@ -24,8 +29,5 @@
         "sort-packages": true
     },
     "prefer-stable": true,
-    "minimum-stability": "dev",
-    "require-dev": {
-        "orchestra/testbench": "^3.6"
-    }
+    "minimum-stability": "dev"
 }
