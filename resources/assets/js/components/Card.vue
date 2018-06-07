@@ -23,18 +23,18 @@ export default {
         },
 
         openMenu() {
-            console.error('test');
+            console.error('test')
         }
     },
 }
 </script>
 
 <style lang="postcss" scoped>
-.card, .card-actions {
+.card[href], .card-actions {
     transition: box-shadow 0.2s, transform 0.2s ease-in-out;
 }
 
-.card:hover {
+.card[href]:hover {
     transform:  translateY(-2px);
     box-shadow: config('shadows.lg');
 }
