@@ -10,7 +10,6 @@
         }
     ],
     "require": {
-        "nothingworks/blade-svg": "^0.2.2"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6"
@@ -29,5 +28,12 @@
         "sort-packages": true
     },
     "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Artisan\\Outline\\OutlineServiceProvider"
+            ]
+        }
+    }
 }

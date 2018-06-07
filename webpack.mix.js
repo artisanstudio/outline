@@ -27,6 +27,5 @@ mix
 
     // Development
     .copy('public', '../canvas/public/vendor/outline')
-    .copy('./resources/assets/svg', '../canvas/resources/assets/svg/vendor/outline')
 
     .version()
