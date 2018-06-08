@@ -31,6 +31,7 @@
 
         <script type="text/javascript" src="{{ mix('js/manifest.js', 'vendor/outline') }}"></script>
         <script type="text/javascript" src="{{ mix('js/vendor.js', 'vendor/outline') }}"></script>
+        <script type="text/javascript" src="{{ mix('js/bootstrap.js', 'vendor/outline') }}"></script>
 
         @stack('scripts')
 

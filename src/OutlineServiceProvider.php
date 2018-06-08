@@ -2,6 +2,7 @@
 
 namespace Artisan\Outline;
 
+use Facades\Artisan\Outline\Outline;
 use Illuminate\Support\Facades\Route;
 
 class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -10,6 +11,11 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $this->registerResources();
         $this->registerRoutes();
+        $this->defineAssetPublishing();
+
+        view()->composer('outline::layouts._sidebar', function ($view) {
+            $view->with('sidebar', Outline::sidebar());
+        });
     }
 
     private function registerResources()
@@ -27,6 +33,13 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         });
+    }
+
+    public function defineAssetPublishing()
+    {
+        $this->publishes([
+            realpath(__DIR__ . '/../public') => public_path('vendor/outline'),
+        ], 'outline-assets');
     }
 
     public function register()
