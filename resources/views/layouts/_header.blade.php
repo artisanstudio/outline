@@ -1,4 +1,4 @@
-<header class="[ bg-offwhite py-4 px-6 md:px-8 flex ]">
+<header class="[ py-4 px-6 md:px-8 flex ]">
     <nav class="browser-actions [ inline-flex ]">
         <a class="button [ rounded-r-none p-1 ]" href="#">
             <i class="icon icon-chevron-left [ text-xl ]"></i>

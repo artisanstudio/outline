@@ -1,40 +1,67 @@
 <template>
-  <a :href="route" class="card [ no-underline text-14 text-grey-darkest border rounded flex flex-col relative ]">
-    <button class="card-actions button [
-        p-1 absolute flex items-center justify-center
-        hover:bg-offwhite hover:border-grey-lighter
-      ]" type="button" v-if="hasMenu()" @click.prevent="openMenu">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </button>
+  <div class="card [ relative border rounded z-0 ]" :class="{ '[ is-active ]': menu.open }">
+    <div class="card-menu [ absolute ]" v-if="hasMenu()">
+      <button class="card-actions button [ p-1 hover:bg-offwhite hover:border-grey-lighter flex items-center justify-center ]"
+              type="button" @click.prevent="toggleMenu">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </button>
 
-    <slot></slot>
-  </a>
+      <transition name="pop">
+        <nav v-if="menu.open" class="[ absolute pin-r shadow-md z-50 bg-white rounded-sm border ]" style="top: 40px; transform: translateX(25%);">
+          <ul class="[ list-reset m-0 p-0 text-14 ]">
+            <slot name="menu"></slot>
+          </ul>
+        </nav>
+      </transition>
+    </div>
+
+    <a :href="route" class="card-content [ no-underline text-14 text-grey-darkest flex flex-col h-full ]">
+      <slot></slot>
+    </a>
+  </div>
 </template>
 
 <script>
 export default {
     props: ['route'],
 
+    data() {
+        return {
+            menu: { open: false },
+        }
+    },
+
     methods: {
         hasMenu() {
             return this.$slots.hasOwnProperty('menu')
         },
 
-        openMenu() {
-            console.error('test')
+        toggleMenu() {
+            this.menu.open = ! this.menu.open
         }
     },
 }
 </script>
 
-<style lang="postcss" scoped>
-.card[href], .card-actions {
+<style lang="postcss">
+.card-menu {
+    top:   config('padding.4');
+    right: config('padding.4');
+}
+
+.card-actions:focus {
+    outline: none;
+}
+
+.card,
+.card-actions {
     transition: box-shadow 0.2s, transform 0.2s ease-in-out;
 }
 
-.card[href]:hover {
+.card.is-active,
+.card:hover {
     transform:  translateY(-2px);
     box-shadow: config('shadows.lg');
 }
@@ -45,8 +72,6 @@ export default {
 }
 
 .card-actions {
-    top:   config('padding.4');
-    right: config('padding.4');
     height: 36px;
     width:  36px;
 }

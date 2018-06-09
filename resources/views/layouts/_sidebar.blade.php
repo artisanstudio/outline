@@ -1,11 +1,12 @@
 <aside class="sidebar [
-    bg-offwhite text-13 py-8
+    text-13 py-8
     w-sidebar flex-no-shrink flex-no-grow
     px-8 md:px-6
     fixed pin md:static md:block z-50
 ]" :class="{ 'is-open': sidebar.open }">
     <h1 class="sidebar-title [ text-black ms-base px-4 mb-8 ]">
         <!-- Let's change this later. -->
+        Outline Admin
     </h1>
 
     <nav class="sidebar-nav [ mb-4 ]">
