@@ -1,6 +1,6 @@
 <template>
   <div class="card [ relative border rounded z-0 ]" :class="{ '[ is-active ]': menu.open }">
-    <div class="card-menu [ absolute ]" v-if="hasMenu()">
+    <div class="card-menu-container [ absolute z-50 ]" v-if="hasMenu()">
       <button class="card-actions button [ p-1 hover:bg-offwhite hover:border-grey-lighter flex items-center justify-center ]"
               type="button" @click.prevent="toggleMenu">
         <span class="dot"></span>
@@ -9,7 +9,7 @@
       </button>
 
       <transition name="pop">
-        <nav v-if="menu.open" class="[ absolute pin-r shadow-md z-50 bg-white rounded-sm border ]" style="top: 40px; transform: translateX(25%);">
+        <nav v-if="menu.open" class="card-menu [ bg-white absolute shadow-md z-50 bg-white rounded-sm border ]" style="top: 40px; left: -100%;">
           <ul class="[ list-reset m-0 p-0 text-14 ]">
             <slot name="menu"></slot>
           </ul>
@@ -17,7 +17,7 @@
       </transition>
     </div>
 
-    <a :href="route" class="card-content [ no-underline text-14 text-grey-darkest flex flex-col h-full ]">
+    <a :href="route" class="card-content [ no-underline text-14 text-grey-darkest flex flex-col h-full z-0 ]">
       <slot></slot>
     </a>
   </div>
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.card-menu {
+.card-menu-container {
     top:   config('padding.4');
     right: config('padding.4');
 }
@@ -90,5 +90,13 @@ export default {
 
 .card-actions:hover .dot {
     background-color: config('colors.grey-dark');
+}
+
+.pop-enter-active, .pop-leave-active {
+    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.pop-enter, .pop-leave-to {
+    transform: scale(0);
 }
 </style>
