@@ -12,7 +12,7 @@
         <ul class="sidebar-links [ list-reset ]">
             @foreach($sidebar as $item)
             <li class="sidebar-link-item">
-                <a class="sidebar-link [ text-grey-darker no-underline flex items-center relative py-3 px-4 mb-1 rounded-sm hover:bg-grey-lighter ]"
+                <a class="sidebar-link [ text-grey-darker no-underline flex items-center relative py-3 px-4 mb-1 rounded-sm hover:bg-grey-lighter {{ \Facades\Artisan\Outline\Outline::activeStateHereForNowBecauseIDontWantToUseAHelper(array_get($item, 'scope', $item['path'])) ? 'is-active' : null }} ]"
                    href="{{ $item['path'] }}">
                     <i class="icon icon-{{ $item['icon'] }} [ mr-2 ]" style="margin-top: 1.5px; opacity: .9;"></i>
                     {{ $item['title'] }}
