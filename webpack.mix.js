@@ -23,7 +23,7 @@ mix
     .sass('resources/assets/sass/app.scss',  'public/css')
     .js('resources/assets/js/bootstrap.js', 'public/js')
     .js('resources/assets/js/app.js', 'public/js')
-    .extract(['vue'])
+    .extract(['vue', 'vuex'])
     .sourceMaps()
 
     // Development
