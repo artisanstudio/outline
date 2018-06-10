@@ -10,3 +10,11 @@ html, body, .app, .sidebar {
 .link {
     @apply no-underline text-grey-darker;
 }
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .35s ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}

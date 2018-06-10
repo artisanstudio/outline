@@ -1,0 +1,93 @@
+.card {
+    @apply relative border rounded;
+}
+
+.card.is-active, .card:hover {
+    transform: translateY(-2px);
+
+    @apply shadow-md;
+}
+
+.card, .card-menu-button {
+    transition: box-shadow 0.2s, transform 0.2s ease-in-out;
+}
+
+.card-overlay {
+    @apply bg-overlay h-full w-full absolute pin z-40 rounded-sm;
+}
+
+.card-content {
+    @apply no-underline text-14 text-grey-darkest flex flex-col h-full;
+}
+
+
+/**
+ * Card Menu Button
+ */
+
+.card-menu-button {
+    top:   config('padding.4');
+    right: config('padding.4');
+
+    @apply p-1 flex items-center justify-center absolute z-30;
+}
+
+.card-menu-button:hover {
+    @apply bg-offwhite border-grey-lighter;
+}
+
+.card-menu-button:focus {
+    outline: none;
+}
+
+.card-menu-button:hover {
+    transform: translateY(-2px);
+}
+
+.card-menu-button {
+    height: 36px;
+    width:  36px;
+}
+
+.card-menu-button .dot + .dot {
+    margin-left: 3px;
+}
+
+.card-menu-button .dot {
+    height: 3px;
+    width:  3px;
+
+    @apply block rounded-full bg-grey;
+}
+
+.card-menu-button:hover .dot {
+    @apply bg-grey-dark;
+}
+
+
+/**
+ * Card Menu
+ */
+
+.card-menu {
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    @apply bg-white bg-white rounded-sm shadow-md;
+    @apply absolute z-50;
+}
+
+.card-menu-ul {
+    @apply list-reset m-0 p-0 text-14;
+}
+
+.card-menu-animation-enter-active,
+.card-menu-animation-leave-active {
+    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card-menu-animation-enter,
+.card-menu-animation-leave-to {
+    transform: translate(-50%, -50%) scale(0);
+}

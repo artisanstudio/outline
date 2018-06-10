@@ -5,6 +5,7 @@
  * The Vue dependency is registered via window as a compromise since
  * I still have no other idea how to implement something better.
  */
+// import axios from 'axios'
 
 /**
  * Let's create our state handler for Vue. Another problem is if
