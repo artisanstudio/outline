@@ -14,6 +14,10 @@
 
 .card-overlay {
     @apply bg-overlay h-full w-full absolute pin z-40 rounded-sm;
+
+    &.fade-leave-active {
+        transition-delay: 0.2s;
+    }
 }
 
 .card-content {
