@@ -1,21 +1,24 @@
 <template>
   <div class="card [ relative border rounded z-0 ]" :class="{ '[ is-active ]': menu.open }">
-    <div class="card-menu-container [ absolute z-50 ]" v-if="hasMenu()">
-      <button class="card-actions button [ p-1 hover:bg-offwhite hover:border-grey-lighter flex items-center justify-center ]"
-              type="button" @click.prevent="toggleMenu">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </button>
+    <button class="card-actions button [ p-1 hover:bg-offwhite hover:border-grey-lighter flex items-center justify-center absolute z-30 ]"
+            v-if="hasMenu()"
+            type="button" @click.prevent="toggleMenu">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </button>
 
-      <transition name="pop">
-        <nav v-if="menu.open" class="card-menu [ bg-white absolute shadow-md z-50 bg-white rounded-sm border ]" style="top: 40px; left: -100%;">
-          <ul class="[ list-reset m-0 p-0 text-14 ]">
-            <slot name="menu"></slot>
-          </ul>
-        </nav>
-      </transition>
-    </div>
+    <transition name="pop">
+      <nav v-if="menu.open" class="card-menu [ bg-white bg-white rounded-sm shadow-md relative z-50 ]">
+        <ul class="[ list-reset m-0 p-0 text-14 ]">
+          <slot name="menu"></slot>
+        </ul>
+      </nav>
+    </transition>
+
+    <transition name="fade">
+      <div class="overlay [ bg-overlay h-full w-full absolute pin z-40 rounded-sm ]" v-if="menu.open" @click.prevent="toggleMenu()"></div>
+    </transition>
 
     <a :href="route" class="card-content [ no-underline text-14 text-grey-darkest flex flex-col h-full z-0 ]">
       <slot></slot>
@@ -46,7 +49,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.card-menu-container {
+.card-actions {
     top:   config('padding.4');
     right: config('padding.4');
 }
@@ -92,11 +95,25 @@ export default {
     background-color: config('colors.grey-dark');
 }
 
+.card-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .pop-enter-active, .pop-leave-active {
     transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .pop-enter, .pop-leave-to {
-    transform: scale(0);
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .35s ease-out;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
 }
 </style>

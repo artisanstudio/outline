@@ -6,6 +6,11 @@
         grid-column-gap:       21px;
     }
 
+    .gap-3 {
+        grid-row-gap:    0.75rem;
+        grid-column-gap: 0.75rem;
+    }
+
     .no-gap {
         grid-row-gap:    0;
         grid-column-gap: 0;

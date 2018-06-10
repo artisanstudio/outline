@@ -1,5 +1,5 @@
 <template>
-<li class="[ px-6 py-2 whitespace-no-wrap hover:bg-grey-lightest ]">
+<li class="[ px-8 py-4 whitespace-no-wrap hover:bg-grey-lightest ]">
   <slot></slot>
 </li>
 </template>
