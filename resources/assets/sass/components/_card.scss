@@ -74,7 +74,7 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
 
-    @apply bg-white bg-white rounded-sm shadow-md;
+    @apply bg-white rounded-sm shadow-md;
     @apply absolute z-50;
 }
 
@@ -90,4 +90,35 @@
 .card-menu-animation-enter,
 .card-menu-animation-leave-to {
     transform: translate(-50%, -50%) scale(0);
+}
+
+
+/**
+ * Card Menu Item
+ */
+
+.card-menu-li:first-of-type {
+    @apply rounded-t-sm;
+}
+
+.card-menu-li:last-of-type {
+    @apply rounded-b-sm;
+}
+
+.card-menu-li {
+    @apply px-6 py-3 whitespace-no-wrap;
+}
+
+.card-menu-li:hover {
+    @apply bg-grey-lightest;
+}
+
+.card-menu {
+    a, button, form {
+        @apply block;
+    }
+
+    a {
+        @apply no-underline;
+    }
 }
