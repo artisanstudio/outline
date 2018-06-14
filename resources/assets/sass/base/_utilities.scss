@@ -1,0 +1,53 @@
+.full {
+    @apply -mt-4 -mx-6;
+}
+
+@media(min-width: config('screens.md')) {
+    .full {
+        @apply -mx-8;
+    }
+}
+
+@responsive {
+    .grid {
+        display:               grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-row-gap:          28px;
+        grid-column-gap:       21px;
+    }
+
+    .gap-3 {
+        grid-row-gap:    0.75rem;
+        grid-column-gap: 0.75rem;
+    }
+
+    .no-gap {
+        grid-row-gap:    0;
+        grid-column-gap: 0;
+    }
+
+    .col-full    { grid-column: span 12; }
+    .col-half    { grid-column: span 6; }
+    .col-third   { grid-column: span 4; }
+    .col-quarter { grid-column: span 3; }
+    .col-1\/2    { grid-column: span 6; }
+    .col-1\/4    { grid-column: span 3; }
+    .col-1\/3    { grid-column: span 4; }
+    .col-2\/3    { grid-column: span 8; }
+
+    @for $column from 1 through 12 {
+        .col-#{$column} {
+            grid-column: span #{$column};
+        }
+    }
+}
+
+.dash {
+    background-image:    linear-gradient(to right, config('colors.grey-lighter') 33%, config('colors.offwhite') 0%);
+    background-position: bottom;
+    background-size:     12px 1px;
+    background-repeat:   repeat-x;
+    height:              1px;
+
+    @apply m-0 w-full;
+}

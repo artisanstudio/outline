@@ -1,0 +1,51 @@
+.button {
+    --button-border:     config('colors.grey-lighter');
+    --button-bg:         config('colors.white');
+    --button-text:       config('colors.black');
+
+    @apply no-underline;
+    @apply border rounded-sm flex items-center justify-center px-4 py-2 text-14;
+
+    border-color:     var(--button-border);
+    background-color: var(--button-bg);
+    color:            var(--button-text);
+}
+
+.button:hover {
+    --button-border: config('colors.primary');
+    --button-bg:     config('colors.primary');
+    --button-text:   config('colors.white');
+}
+
+.button-primary {
+    --button-bg:     config('colors.primary');
+    --button-border: config('colors.primary');
+    --button-text:   config('colors.white');
+}
+
+.button-primary:hover {
+    --button-bg:     config('colors.primary');
+    --button-border: config('colors.primary');
+    --button-text:   config('colors.white');
+}
+
+.button-grey {
+    --button-bg:     config('colors.grey-dark');
+    --button-border: config('colors.grey-dark');
+    --button-text:   config('colors.white');
+}
+
+.button-grey:hover {
+    --button-bg:     config('colors.grey-dark');
+    --button-border: config('colors.grey-dark');
+}
+
+.button-outline {
+    --button-text: var(--button-border);
+    --button-bg:   config('colors.transparent');
+}
+
+.button-outline:hover {
+    --button-bg:   var(--button-border);
+    --button-text: config('colors.white');
+}
