@@ -4,7 +4,7 @@
     --button-text:       config('colors.black');
 
     @apply no-underline;
-    @apply border rounded-sm flex items-center px-4 py-2 text-14;
+    @apply border rounded-sm flex items-center justify-center px-4 py-2 text-14;
 
     border-color:     var(--button-border);
     background-color: var(--button-bg);

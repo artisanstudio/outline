@@ -9,7 +9,7 @@
 }
 
 .card, .card-menu-button {
-    transition: box-shadow 0.2s, transform 0.2s ease-in-out;
+    transition: opacity 0.2s, box-shadow 0.2s, transform 0.2s ease-in-out;
 }
 
 .card-overlay {

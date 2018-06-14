@@ -186,6 +186,7 @@ module.exports = {
     */
 
     textSizes: {
+        '10': '10px',
         '13': '13px',
         '14': '14px',
 

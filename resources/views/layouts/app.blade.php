@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="[ bg-primary ]" lang="en">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +13,17 @@
         <link rel="icon" href="/vendor/outline/img/favicon.png">
         <link href="{{ mix('css/app.css', 'vendor/outline') }}" rel="stylesheet">
 
-        @yield('head')
+        @stack('head')
     </head>
 
     <body class="[ leading-normal tracking-normal font-sans font-normal text-base bg-offwhite text-black ]">
         <main id="app" class="app [ flex flex-col md:flex-row ]" :class="{ 'sidebar-open': sidebar.open }">
             @include('outline::layouts._sidebar')
 
-            <section class="body [ flex-grow ]">
+            <section class="body [ flex-grow flex flex-col ]">
                 @include('outline::layouts._header')
 
-                <section class="content [ pt-4 pb-16 px-6 md:px-8 rounded-tl-sm bg-white ]">
+                <section class="content [ pt-4 pb-16 px-6 md:px-8 rounded-tl-sm bg-white flex-grow ]">
                     @yield('content')
                 </section>
             </section>
