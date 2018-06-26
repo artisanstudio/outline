@@ -45,16 +45,16 @@ let colors = {
     'transparent':   'transparent',
     'overlay':       'rgba(0, 0, 0, 0.30)',
 
-    'black':         '#272727',
+    'black':         '#555555',
     'grey-darkest':  '#3d4852',
     'grey-darker':   '#626a6d',
     'grey-dark':     '#9a9a9a',
     'grey':          '#aaaeb1',
-    'grey-light':    '#dae1e7',
+    'grey-light':    '#efefef',
     'grey-lighter':  '#f1f1f1',
-    'grey-lightest': '#f8fafc',
+    'grey-lightest': '#f7f7f7',
     'white':         '#ffffff',
-    'offwhite':      '#fbfbfb',
+    'offwhite':      '#f7f7f7',
 
     'blue':          '#1e7bff',
     'pink':          '#ff1d8d',
@@ -106,7 +106,7 @@ module.exports = {
       'sm': '576px',
       'md': '768px',
       'lg': '992px',
-      'xl': '1200px',
+      'xl': '1440px',
     },
 
 
@@ -186,19 +186,7 @@ module.exports = {
     */
 
     textSizes: {
-        '10': '10px',
-        '13': '13px',
         '14': '14px',
-
-        'xs':   '.75rem',    // 12px
-        'sm':   '.875rem',   // 14px
-        'base': '1rem',      // 16px
-        'lg':   '1.125rem',  // 18px
-        'xl':   '1.25rem',   // 20px
-        '2xl':  '1.5rem',    // 24px
-        '3xl':  '1.875rem',  // 30px
-        '4xl':  '2.25rem',   // 36px
-        '5xl':  '3rem',      // 48px
     },
 
 
@@ -410,7 +398,7 @@ module.exports = {
         'full':   '100%',
         'screen': '100vw',
 
-        'sidebar': '250px',
+        'sidebar': '275px',
     },
 
 
@@ -600,6 +588,7 @@ module.exports = {
         '5': '1.25rem',
         '6': '1.5rem',
         '8': '2rem',
+        '12': '3rem',
     },
 
 

@@ -4,7 +4,6 @@
 
 .pagination li > a,
 .pagination li > span {
-    @apply text-13;
     @apply block border no-underline;
     @apply flex items-center justify-center h-full;
     @apply border-r-0 text-black;

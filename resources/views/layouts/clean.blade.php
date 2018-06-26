@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="[ bg-primary ]" lang="en">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
         @yield('head')
     </head>
 
-    <body class="[ leading-normal tracking-normal font-sans font-normal text-base bg-offwhite text-black ]">
+    <body class="[ leading-normal tracking-normal font-sans font-normal text-base bg-white text-black ]">
         @yield('content')
 
         @stack('scripts')

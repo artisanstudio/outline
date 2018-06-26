@@ -3,8 +3,6 @@
 }
 
 .field-label {
-    font-size:     14px;
-
     @apply block font-semibold mb-2;
 }
 
@@ -12,7 +10,7 @@
     outline: none;
     resize:  none;
 
-    @apply border border-grey-lighter bg-white text-14 rounded-sm w-full p-2;
+    @apply border border-grey-lighter bg-white rounded-sm w-full p-2;
 }
 
 .field-input[readonly] {
