@@ -1,0 +1,2 @@
+webpackJsonp([2],{0:function(o,e,n){n("WRGp"),o.exports=n("xZZD")},WRGp:function(o,e,n){document.head.querySelector('meta[name="csrf-token"]')||console.error("CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token"),window.Vue=n("I3G/")},xZZD:function(o,e){}},[0]);
+//# sourceMappingURL=bootstrap.js.map
