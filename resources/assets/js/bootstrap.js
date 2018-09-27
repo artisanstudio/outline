@@ -42,3 +42,15 @@ window.Echo = new Echo({
     encrypted:   true,
 })
 **/
+
+class Outline {
+    constructor() {
+        this.boot = () => {}
+    }
+
+    booting(callback) {
+        this.boot = callback
+    }
+}
+
+window.Outline = new Outline

@@ -36,10 +36,12 @@ Vue.component('csrf', {
     },
 })
 
-new Vue({
-    el: '#app',
-
+const app = new Vue({
     store,
 
     mixins: [ require('./mixins/Sidebar.js').default ],
 })
+
+window.Outline.boot(app)
+
+app.$mount('#app')

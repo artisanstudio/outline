@@ -6,6 +6,24 @@ class Outline
 {
     private $sidebar;
 
+    public function script($name, $file = null)
+    {
+        if ($file) {
+            $this->scripts[$name] = $file;
+        }
+
+        return array_get($this->scripts, $name);
+    }
+
+    public function style($name, $file = null)
+    {
+        if ($file) {
+            $this->styles[$name] = $file;
+        }
+
+        return array_get($this->styles, $name);
+    }
+
     /**
      * Set the sidebar navigation.
      *

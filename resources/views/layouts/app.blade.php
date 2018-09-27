@@ -20,8 +20,7 @@
         <main id="app" class="app [ flex flex-col md:flex-row ]" :class="{ 'sidebar-open': sidebar.open }">
             @include('outline::layouts._sidebar')
 
-            <section class="body [ flex-grow flex flex-col ]">
-                @include('outline::layouts._header')
+            <section class="body [ flex-grow flex flex-col ]"> @include('outline::layouts._header')
 
                 <section class="content [ pt-4 pb-16 px-6 md:px-8 rounded-tl-sm bg-white flex-grow ]">
                     @yield('content')
