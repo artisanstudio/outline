@@ -6,22 +6,53 @@ class Outline
 {
     private $sidebar;
 
-    public function script($name, $file = null)
+    /**
+     * The file that will be injected to the layout.
+     *
+     * @var array
+     */
+    private $files = [
+        'styles'  => [],
+        'scripts' => [],
+    ];
+
+    /**
+     * Pull in the file from the file asset reference.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    public function file($name)
     {
-        if ($file) {
-            $this->scripts[$name] = $file;
+        if ($file = array_get($this->files, "styles.{$name}")) {
+            return $file;
         }
 
-        return array_get($this->scripts, $name);
+        return array_get($this->files, "scripts.{$name}");
     }
 
-    public function style($name, $file = null)
+    /**
+     * Add a script at the bottom of the document.
+     *
+     * @param  string  $name
+     * @param  string  $file
+     * @return void
+     */
+    public function script($name, $file)
     {
-        if ($file) {
-            $this->styles[$name] = $file;
-        }
+        array_set($this->files, "scripts.{$name}", $file);
+    }
 
-        return array_get($this->styles, $name);
+    /**
+     * Add a style to head of the document.
+     *
+     * @param  string  $name
+     * @param  string  $file
+     * @return void
+     */
+    public function style($name, $file)
+    {
+        array_set($this->files, "styles.{$name}", $file);
     }
 
     /**
