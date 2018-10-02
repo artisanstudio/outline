@@ -1,3 +1,7 @@
+import Vue from 'vue'
+
+import "./bootstrap.js"
+
 /**
  * The bootstrap.js file isn't bundled up with this file so userland
  * can plug in custom components through the 'scripts' stack.
@@ -16,6 +20,7 @@
  */
 
 import store from './vuex/store'
+import Sidebar from './mixins/Sidebar.js'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -36,13 +41,17 @@ Vue.component('csrf', {
     },
 })
 
+/**
+ * Hook user-land components before mounting our Vue instance.
+ */
+window.Outline.boot(Vue)
+
 const app = new Vue({
+    el: '#app',
+
     store,
 
-    mixins: [ require('./mixins/Sidebar.js').default ],
+    mixins: [
+        Sidebar,
+    ],
 })
-
-// Hook user-land components before mounting our Vue instance.
-window.Outline.boot(app)
-
-app.$mount('#app')

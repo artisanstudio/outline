@@ -38,7 +38,7 @@
         <script type="text/javascript" src="/vendor/outline/js/vendor.js"></script>
         <script type="text/javascript" src="/vendor/outline/js/bootstrap.js"></script>
 
-        @stack('foot')
+        @stack('scripts')
 
         <script type="text/javascript" src="/vendor/outline/js/app.js"></script>
     </body>

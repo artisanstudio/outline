@@ -18,8 +18,8 @@ mix
         require('postcss-nested')(),
         require('tailwindcss')('./resources/assets/tailwind.js'),
     ])
-    .js('resources/assets/js/bootstrap.js', 'public/js')
     .js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/bootstrap.js', 'public/js')
     .extract(['vue', 'vuex'])
     .sourceMaps()
 
