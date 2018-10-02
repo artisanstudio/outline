@@ -1,128 +1,111 @@
 .card {
-    @apply relative border rounded;
-}
+    @apply .relative .border .rounded;
 
-.card.is-active, .card:hover {
-    transform: translateY(-2px);
+    &.-active, &:hover {
+        @apply .shadow-md;
+        transform: translateY(-2px);
+    }
 
-    @apply shadow-md;
-}
+    &, > .kebab {
+        transition: box-shadow 0.2s,
+                    opacity 0.2s,
+                    transform 0.2s ease-in-out;
+    }
 
-.card, .card-menu-button {
-    transition: opacity 0.2s, box-shadow 0.2s, transform 0.2s ease-in-out;
-}
+    > .kebab {
+        @apply .flex .items-center .justify-center .p-1 .absolute .z-30;
 
-.card-overlay {
-    @apply bg-overlay h-full w-full absolute pin z-40 rounded-sm;
+        height: 36px;
+        width:  36px;
+        top:   config('padding.4');
+        right: config('padding.4');
+    }
 
-    &.fade-leave-active {
+    > .kebab:hover {
+        @apply .bg-offwhite .border-grey-lighter;
+    }
+
+    > .kebab:focus {
+        outline: none;
+    }
+
+    > .kebab:hover {
+        transform: translateY(-2px);
+    }
+
+    > .kebab > .dot + .dot {
+        margin-left: 3px;
+    }
+
+    > .kebab > .dot {
+        @apply .block .rounded-full .bg-grey;
+        height: 3px;
+        width:  3px;
+    }
+
+    > .kebab:hover > .dot {
+        @apply .bg-grey-dark;
+    }
+
+    > .overlay {
+        @apply .bg-overlay .h-full .w-full .rounded-sm .absolute .pin .z-40;
+    }
+
+    > .overlay.fade-leave-active {
         transition-delay: 0.2s;
+    }
+
+    > .content {
+        @apply .no-underline .text-14 .text-grey-darkest .h-full
+               .flex .flex-col;
     }
 }
 
-.card-content {
-    @apply no-underline text-14 text-grey-darkest flex flex-col h-full;
-}
+.card > .menu {
+    @apply .bg-white .rounded-sm .shadow-md
+           .absolute .z-50;
 
-
-/**
- * Card Menu Button
- */
-
-.card-menu-button {
-    top:   config('padding.4');
-    right: config('padding.4');
-
-    @apply p-1 flex items-center justify-center absolute z-30;
-}
-
-.card-menu-button:hover {
-    @apply bg-offwhite border-grey-lighter;
-}
-
-.card-menu-button:focus {
-    outline: none;
-}
-
-.card-menu-button:hover {
-    transform: translateY(-2px);
-}
-
-.card-menu-button {
-    height: 36px;
-    width:  36px;
-}
-
-.card-menu-button .dot + .dot {
-    margin-left: 3px;
-}
-
-.card-menu-button .dot {
-    height: 3px;
-    width:  3px;
-
-    @apply block rounded-full bg-grey;
-}
-
-.card-menu-button:hover .dot {
-    @apply bg-grey-dark;
-}
-
-
-/**
- * Card Menu
- */
-
-.card-menu {
     top:  50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
 
-    @apply bg-white rounded-sm shadow-md;
-    @apply absolute z-50;
-}
+    &.animate-enter-active,
+    &.animate-leave-active {
+        transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
 
-.card-menu-ul {
-    @apply list-reset m-0 p-0 text-14;
-}
+    &.animate-enter,
+    &.animate-leave-to {
+        transform: translate(-50%, -50%) scale(0);
+    }
 
-.card-menu-animation-enter-active,
-.card-menu-animation-leave-active {
-    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+    > .menu-items {
+        @apply .list-reset .m-0 .p-0 .text-14;
+    }
 
-.card-menu-animation-enter,
-.card-menu-animation-leave-to {
-    transform: translate(-50%, -50%) scale(0);
-}
-
-
-/**
- * Card Menu Item
- */
-
-.card-menu-li:first-of-type {
-    @apply rounded-t-sm;
-}
-
-.card-menu-li:last-of-type {
-    @apply rounded-b-sm;
-}
-
-.card-menu-li {
-    @apply px-6 py-3 whitespace-no-wrap;
-}
-
-.card-menu-li:hover {
-    @apply bg-grey-lightest;
-}
-
-.card-menu {
     a, button, form {
-        @apply block;
+        @apply .block;
     }
 
     a {
-        @apply no-underline;
+        @apply .no-underline;
+    }
+}
+
+.card > .menu > .menu-items {
+    > .menu-item:first-of-type {
+        @apply .rounded-t-sm;
+    }
+
+    > .menu-item:last-of-type {
+        @apply .rounded-b-sm;
+    }
+
+    > .menu-item {
+        @apply .px-6 .py-3 .whitespace-no-wrap;
+    }
+
+    > .menu-item:hover {
+        @apply .bg-grey-lightest;
     }
 }

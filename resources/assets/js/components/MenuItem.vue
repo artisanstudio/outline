@@ -1,5 +1,5 @@
 <template>
-    <li class="card-menu-li">
+    <li class="menu-item">
         <slot></slot>
     </li>
 </template>
