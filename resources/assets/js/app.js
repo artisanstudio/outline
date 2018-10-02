@@ -1,7 +1,5 @@
 import Vue from 'vue'
 
-import "./bootstrap.js"
-
 /**
  * The bootstrap.js file isn't bundled up with this file so userland
  * can plug in custom components through the 'scripts' stack.
