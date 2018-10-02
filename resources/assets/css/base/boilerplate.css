@@ -3,7 +3,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-html, body, .app, .sidebar {
+html, body, .app-wrapper, .app-sidebar {
     min-height: 100vh;
 }
 

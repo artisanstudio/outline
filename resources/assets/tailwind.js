@@ -45,7 +45,7 @@ let colors = {
     'transparent':   'transparent',
     'overlay':       'rgba(0, 0, 0, 0.30)',
 
-    'black':         '#555555',
+    'black':         '#000000',
     'grey-darkest':  '#3d4852',
     'grey-darker':   '#626a6d',
     'grey-dark':     '#9a9a9a',

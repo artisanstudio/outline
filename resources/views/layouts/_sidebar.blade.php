@@ -1,10 +1,7 @@
 <aside class="app-sidebar" :class="{ '-open': sidebar.open }">
-    <h1 class="sidebar-title [ text-black ms-lg px-4 mb-8 ]">
-        <!-- Let's change this later. -->
-        Outline Admin
-    </h1>
+    <h1 class="title">Outline Admin</h1>
 
-    <nav class="sidebar-nav [ mb-4 ]">
+    <nav class="navigation [ mb-4 ]">
         <ul class="sidebar-links [ list-reset ]">
             @foreach($sidebar as $item)
             <li class="sidebar-link-item">

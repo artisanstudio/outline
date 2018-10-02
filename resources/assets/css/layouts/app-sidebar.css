@@ -1,9 +1,14 @@
 .app-sidebar {
-    @apply .text-14 .py-8 .text-white;
-    @apply .w-sidebar .flex-no-shrink .flex-no-grow;
-    @apply .px-8;
-    @apply .fixed .pin .z-50;
-    @apply .bg-primary;
+    @apply .flex-no-shrink .flex-no-grow;
+    @apply .bg-primary .w-sidebar .p-8 .fixed .pin .z-50 .h-full;
+
+    > .title {
+        @apply .text-white .ms-lg .px-4 .mb-8;
+    }
+
+    > .navigation {
+        @apply .text-14 .text-white;
+    }
 }
 
 @screen md {
