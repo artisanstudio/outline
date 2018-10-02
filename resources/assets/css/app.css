@@ -20,6 +20,7 @@
 @import "layouts/app-main";
 @import "layouts/app-header";
 @import "layouts/app-content";
+@import "layouts/app-page";
 
 
 @import "tailwindcss/utilities";

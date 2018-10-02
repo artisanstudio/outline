@@ -4,6 +4,8 @@
 
     > .title {
         @apply .text-white .ms-lg .px-4 .mb-8;
+
+        letter-spacing: -0.011em;
     }
 
     > .navigation {

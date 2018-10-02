@@ -4,6 +4,6 @@
 
 @screen md {
     .app-overlay {
-        @appy .hidden;
+        @apply .hidden;
     }
 }

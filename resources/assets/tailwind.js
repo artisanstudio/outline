@@ -251,8 +251,8 @@ module.exports = {
     */
 
     tracking: {
-        'tight':  '-0.05em',
-        'normal': '-0.025em',
+        'tight':  '-0.016em',
+        'normal': '-0.004em',
         'wide':   '0.05em',
     },
 
@@ -399,7 +399,7 @@ module.exports = {
         'full':   '100%',
         'screen': '100vw',
 
-        'sidebar': '250px',
+        'sidebar': '260px',
     },
 
 
