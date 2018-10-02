@@ -3,49 +3,58 @@
     --button-bg:         config('colors.white');
     --button-text:       config('colors.black');
 
-    @apply no-underline;
-    @apply border rounded-sm flex items-center justify-center px-4 py-2;
+    @apply .no-underline;
+    @apply .border .rounded-sm .flex .items-center .justify-center .px-4 .py-3;
 
     border-color:     var(--button-border);
     background-color: var(--button-bg);
     color:            var(--button-text);
-}
 
-.button:hover {
-    --button-border: config('colors.primary');
-    --button-bg:     config('colors.primary');
-    --button-text:   config('colors.white');
-}
+    &:hover {
+        --button-border: config('colors.primary');
+        --button-bg:     config('colors.primary');
+        --button-text:   config('colors.white');
+    }
 
-.button-primary {
-    --button-bg:     config('colors.primary');
-    --button-border: config('colors.primary');
-    --button-text:   config('colors.white');
-}
+    &.-primary {
+        --button-bg:     config('colors.primary');
+        --button-border: config('colors.primary');
+        --button-text:   config('colors.white');
+    }
 
-.button-primary:hover {
-    --button-bg:     config('colors.primary');
-    --button-border: config('colors.primary');
-    --button-text:   config('colors.white');
-}
+    &.-primary:hover {
+        --button-bg:     config('colors.primary');
+        --button-border: config('colors.primary');
+        --button-text:   config('colors.white');
+    }
 
-.button-grey {
-    --button-bg:     config('colors.grey-dark');
-    --button-border: config('colors.grey-dark');
-    --button-text:   config('colors.white');
-}
+    &.-grey {
+        --button-bg:     config('colors.grey-dark');
+        --button-border: config('colors.grey-dark');
+        --button-text:   config('colors.white');
+    }
 
-.button-grey:hover {
-    --button-bg:     config('colors.grey-dark');
-    --button-border: config('colors.grey-dark');
-}
+    &.-grey:hover {
+        --button-bg:     config('colors.grey-dark');
+        --button-border: config('colors.grey-dark');
+    }
 
-.button-outline {
-    --button-text: var(--button-border);
-    --button-bg:   config('colors.transparent');
-}
+    &.-outline {
+        --button-text: var(--button-border);
+        --button-bg:   config('colors.transparent');
+    }
 
-.button-outline:hover {
-    --button-bg:   var(--button-border);
-    --button-text: config('colors.white');
+    &.-outline:hover {
+        --button-bg:   var(--button-border);
+        --button-text: config('colors.white');
+    }
+
+    &.-transparent {
+        --button-bg:     config('colors.transparent');
+        --button-border: config('colors.transparent');
+    }
+
+    &.-left {
+        @apply .justify-start;
+    }
 }

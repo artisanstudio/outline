@@ -21,11 +21,3 @@
         }
     }
 }
-
-.sidebar-link.-active {
-    @apply .bg-primary .text-white;
-
-    &:hover {
-        @apply .bg-primary;
-    }
-}

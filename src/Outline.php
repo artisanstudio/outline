@@ -86,7 +86,7 @@ class Outline
      * @param  string|array  $routes
      * @return boolean
      */
-    public function activeStateHereForNowBecauseIDontWantToUseAHelper($routes)
+    public function activeWhen($routes)
     {
         if (! is_array($routes)) {
             $routes = array_wrap($routes);

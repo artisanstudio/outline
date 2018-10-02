@@ -11,6 +11,36 @@
     }
 }
 
+.sidebar-navigation {
+    > .links {
+        @apply .list-reset;
+    }
+
+    > .links > .item {
+        @apply .mb-2;
+    }
+
+    > .links > .item > .button {
+        --button-text: config('colors.white');
+
+        @apply .items-start;
+    }
+
+    > .links > .item > .button:hover {
+        --button-bg:     config('colors.white');
+        --button-border: config('colors.white');
+        --button-text:   config('colors.blue');
+    }
+
+    > .links > .item.-active > .button {
+        --button-bg:     config('colors.white');
+        --button-border: config('colors.white');
+        --button-text:   config('colors.blue');
+
+        @apply .font-bold .shadow-md;
+    }
+}
+
 @screen md {
     .app-sidebar {
         @apply .block .px-6 .static;

@@ -7,10 +7,6 @@ html, body, .app-wrapper, .app-sidebar {
     min-height: 100vh;
 }
 
-.link {
-    @apply no-underline text-grey-darker;
-}
-
 .fade-enter-active, .fade-leave-active {
     transition: opacity .25s ease-out;
 }
