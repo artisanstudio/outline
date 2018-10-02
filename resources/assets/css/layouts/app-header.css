@@ -1,9 +1,17 @@
 .app-header {
     @apply .py-4 .px-6 .flex;
+
+    > .hamburger {
+        @apply .py-2 .px-2 .ml-auto;
+    }
 }
 
 @screen md {
     .app-header {
         @apply .px-8;
+
+        > .hamburger {
+            @apply .hidden;
+        }
     }
 }

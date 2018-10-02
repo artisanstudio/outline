@@ -16,6 +16,7 @@
 @import "layouts/app";
 @import "layouts/app-wrapper";
 @import "layouts/app-sidebar";
+@import "layouts/app-overlay";
 @import "layouts/app-main";
 @import "layouts/app-header";
 @import "layouts/app-content";

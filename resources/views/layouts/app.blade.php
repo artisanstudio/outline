@@ -20,6 +20,11 @@
         <section id="app" class="app-wrapper" :class="{ '-sidebar-open': sidebar.open }">
             @include('outline::layouts._sidebar')
 
+            <section class="app-overlay"
+                 @click.prevent="closeSidebar"
+                 v-if="sidebar.open">
+            </section>
+
             <section class="app-main">
                 @include('outline::layouts._header')
 

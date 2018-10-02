@@ -14,8 +14,3 @@
         </ul>
     </nav>
 </aside>
-
-<div class="sidebar-overlay [
-    fixed h-screen w-screen bg-white z-40 cursor-pointer md:hidden opacity-75
-]" @click.prevent="closeSidebar" v-if="sidebar.open">
-</div>
