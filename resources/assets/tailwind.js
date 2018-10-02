@@ -399,7 +399,7 @@ module.exports = {
         'full':   '100%',
         'screen': '100vw',
 
-        'sidebar': '275px',
+        'sidebar': '250px',
     },
 
 

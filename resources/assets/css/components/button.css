@@ -53,4 +53,15 @@
         --button-bg:     config('colors.transparent');
         --button-border: config('colors.transparent');
     }
+
+    &.-with-icon {
+        @apply .items-center;
+    }
+
+    &.-with-icon > .icon {
+        @apply .mr-2;
+
+        margin-top: 1.5px;
+        opacity: 0.9;
+    }
 }

@@ -6,7 +6,7 @@
             @foreach($sidebar as $item)
             <li class="item {{ Facades\Artisan\Outline\Outline::activeWhen(array_get($item, 'scope', $item['path'])) ? '-active' : null }}">
                 <a class="button justify-start -transparent -with-icon" href="{{ $item['path'] }}">
-                    <i class="icon icon-{{ $item['icon'] }} [ mr-2 ]" style="margin-top: 1.5px; opacity: .9;"></i>
+                    <i class="icon icon-{{ $item['icon'] }}"></i>
                     {{ $item['title'] }}
                 </a>
             </li>

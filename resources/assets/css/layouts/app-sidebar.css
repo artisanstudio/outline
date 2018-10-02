@@ -1,6 +1,6 @@
 .app-sidebar {
     @apply .flex-no-shrink .flex-no-grow;
-    @apply .bg-primary .w-sidebar .p-8 .fixed .pin .z-50 .h-full;
+    @apply .bg-primary .w-sidebar .p-8 .fixed .pin .z-50;
 
     > .title {
         @apply .text-white .ms-lg .px-4 .mb-8;
@@ -22,8 +22,6 @@
 
     > .links > .item > .button {
         --button-text: config('colors.white');
-
-        @apply .items-start;
     }
 
     > .links > .item > .button:hover {
