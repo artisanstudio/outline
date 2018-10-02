@@ -1,5 +1,4 @@
-let tailwind = require('tailwindcss')
-let { mix }  = require('laravel-mix')
+let { mix } = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -16,7 +15,7 @@ mix
     .options({
         processCssUrls: false,
         postCss: [
-            tailwind('./resources/assets/tailwind.js'),
+            require('tailwindcss')('./resources/assets/tailwind.js'),
         ],
     })
     .setPublicPath('public')
@@ -27,6 +26,6 @@ mix
     .sourceMaps()
 
     // Development
-    .copy('public', '../canvas/public/vendor/outline')
+    .copy('public', '../../public/vendor/outline')
 
     .version()

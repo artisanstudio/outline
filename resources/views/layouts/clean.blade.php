@@ -11,7 +11,7 @@
         </title>
 
         <link rel="icon" href="/vendor/outline/img/favicon.png">
-        <link href="{{ mix('css/app.css', 'vendor/outline') }}" rel="stylesheet">
+        <link href="/vendor/outline/css/app.css" rel="stylesheet">
 
         @yield('head')
     </head>

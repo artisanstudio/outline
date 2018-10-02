@@ -11,7 +11,7 @@
         </title>
 
         <link rel="icon" href="/vendor/outline/img/favicon.png">
-        <link href="{{ mix('css/app.css', 'vendor/outline') }}" rel="stylesheet">
+        <link href="/vendor/outline/css/app.css" rel="stylesheet">
 
         @stack('head')
     </head>
@@ -28,12 +28,12 @@
             </section>
         </main>
 
-        <script type="text/javascript" src="{{ mix('js/manifest.js', 'vendor/outline') }}"></script>
-        <script type="text/javascript" src="{{ mix('js/vendor.js', 'vendor/outline') }}"></script>
-        <script type="text/javascript" src="{{ mix('js/bootstrap.js', 'vendor/outline') }}"></script>
+        <script type="text/javascript" src="/vendor/outline/scripts/manifest.js"></script>
+        <script type="text/javascript" src="/vendor/outline/scripts/vendor.js"></script>
+        <script type="text/javascript" src="/vendor/outline/scripts/bootstrap.js"></script>
 
         @stack('scripts')
 
-        <script type="text/javascript" src="{{ mix('js/app.js', 'vendor/outline') }}"></script>
+        <script type="text/javascript" src="/vendor/outline/scripts/app.js"></script>
     </body>
 </html>

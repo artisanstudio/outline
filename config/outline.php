@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'prefix' => 'cp',
+    'prefix' => 'admin',
 ];

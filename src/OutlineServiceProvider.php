@@ -13,6 +13,8 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->registerRoutes();
         $this->defineAssetPublishing();
 
+        $this->mergeConfigFrom(__DIR__ . '/../config/outline.php', 'outline');
+
         view()->composer('outline::layouts._sidebar', function ($view) {
             $view->with('sidebar', Outline::sidebar());
         });
@@ -26,8 +28,8 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
     private function registerRoutes()
     {
         Route::group([
-            'as'         => config('outline.prefix', 'cp') . '.',
-            'prefix'     => config('outline.prefix', 'cp'),
+            'as'         => config('outline.prefix', 'admin') . '.',
+            'prefix'     => config('outline.prefix', 'admin'),
             'namespace'  => 'Artisan\Outline\Http\Controllers',
             'middleware' => ['web'],
         ], function () {
