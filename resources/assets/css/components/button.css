@@ -53,8 +53,4 @@
         --button-bg:     config('colors.transparent');
         --button-border: config('colors.transparent');
     }
-
-    &.-left {
-        @apply .justify-start;
-    }
 }
