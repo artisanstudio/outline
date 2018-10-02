@@ -16,24 +16,25 @@
         @stack('head')
     </head>
 
-    <body class="[ leading-normal tracking-normal font-sans font-normal text-base bg-offwhite text-black ]">
-        <main id="app" class="app [ flex flex-col md:flex-row ]" :class="{ 'sidebar-open': sidebar.open }">
+    <body>
+        <section id="app" class="app-wrapper" :class="{ '-sidebar-open': sidebar.open }">
             @include('outline::layouts._sidebar')
 
-            <section class="body [ flex-grow flex flex-col ]"> @include('outline::layouts._header')
+            <section class="app-main">
+                @include('outline::layouts._header')
 
-                <section class="content [ pt-4 pb-16 px-6 md:px-8 rounded-tl-sm bg-white flex-grow ]">
+                <main class="app-content">
                     @yield('content')
-                </section>
+                </main>
             </section>
-        </main>
+        </section>
 
-        <script type="text/javascript" src="/vendor/outline/scripts/manifest.js"></script>
-        <script type="text/javascript" src="/vendor/outline/scripts/vendor.js"></script>
-        <script type="text/javascript" src="/vendor/outline/scripts/bootstrap.js"></script>
+        <script type="text/javascript" src="/vendor/outline/js/manifest.js"></script>
+        <script type="text/javascript" src="/vendor/outline/js/vendor.js"></script>
+        <script type="text/javascript" src="/vendor/outline/js/bootstrap.js"></script>
 
-        @stack('scripts')
+        @stack('foot')
 
-        <script type="text/javascript" src="/vendor/outline/scripts/app.js"></script>
+        <script type="text/javascript" src="/vendor/outline/js/app.js"></script>
     </body>
 </html>

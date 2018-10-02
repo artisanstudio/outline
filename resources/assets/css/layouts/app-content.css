@@ -1,0 +1,10 @@
+.app-content {
+    @apply .pt-4 .pb-16 .px-6 .rounded-tl-sm .bg-white;
+    @apply .flex-grow;
+}
+
+@screen md {
+    .app-content {
+        @apply .px-8;
+    }
+}

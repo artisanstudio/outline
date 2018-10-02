@@ -1,0 +1,31 @@
+@media(max-width: config('screens.md')) {
+    .app-sidebar, .app-main {
+        transition: transform .25s ease-in-out;
+    }
+
+    .app-wrapper {
+        &.-sidebar-open {
+            @apply .overflow-hidden;
+        }
+
+        &.-sidebar-open > .app-main {
+            transform: translateX(config('width.sidebar'));
+        }
+    }
+
+    .app-sidebar {
+        transform: translateX(calc(-1 * config('width.sidebar')));
+
+        &.-open {
+            transform: translateX(0);
+        }
+    }
+}
+
+.sidebar-link.-active {
+    @apply .bg-primary .text-white;
+
+    &:hover {
+        @apply .bg-primary;
+    }
+}

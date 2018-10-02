@@ -12,14 +12,12 @@ let { mix } = require('laravel-mix')
  */
 
 mix
-    .options({
-        processCssUrls: false,
-        postCss: [
-            require('tailwindcss')('./resources/assets/tailwind.js'),
-        ],
-    })
     .setPublicPath('public')
-    .sass('resources/assets/sass/app.scss',  'public/css')
+    .postCss('resources/assets/css/app.css', 'public/css', [
+        require('postcss-import')(),
+        require('postcss-nested')(),
+        require('tailwindcss')('./resources/assets/tailwind.js'),
+    ])
     .js('resources/assets/js/bootstrap.js', 'public/js')
     .js('resources/assets/js/app.js', 'public/js')
     .extract(['vue', 'vuex'])

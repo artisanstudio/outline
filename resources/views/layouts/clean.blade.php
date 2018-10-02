@@ -16,7 +16,7 @@
         @yield('head')
     </head>
 
-    <body class="[ leading-normal tracking-normal font-sans font-normal text-base bg-white text-black ]">
+    <body>
         @yield('content')
 
         @stack('scripts')

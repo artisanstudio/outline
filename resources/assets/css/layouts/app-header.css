@@ -1,0 +1,9 @@
+.app-header {
+    @apply .py-4 .px-6 .flex;
+}
+
+@screen md {
+    .app-header {
+        @apply .px-8;
+    }
+}

@@ -56,14 +56,14 @@ let colors = {
     'white':         '#ffffff',
     'offwhite':      '#f7f7f7',
 
-    'blue':          '#1e7bff',
+    'blue':          '#1e8cf9',
     'pink':          '#ff1d8d',
     'yellow':        '#fcd603',
     'green':         '#03fc0d',
     'red':           '#fc0303',
 }
 
-let primaryColor = 'pink'
+let primaryColor = 'blue'
 
 module.exports = {
 

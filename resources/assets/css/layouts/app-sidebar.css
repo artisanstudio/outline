@@ -1,0 +1,13 @@
+.app-sidebar {
+    @apply .text-14 .py-8 .text-white;
+    @apply .w-sidebar .flex-no-shrink .flex-no-grow;
+    @apply .px-8;
+    @apply .fixed .pin .z-50;
+    @apply .bg-primary;
+}
+
+@screen md {
+    .app-sidebar {
+        @apply .block .px-6 .static;
+    }
+}

@@ -1,0 +1,9 @@
+.app-wrapper {
+    @apply .flex .flex-col;
+}
+
+@screen md {
+    .app-wrapper {
+        @apply .flex-row;
+    }
+}

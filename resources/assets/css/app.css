@@ -1,6 +1,8 @@
 @import url('https://rsms.me/inter/inter-ui.css');
 
-@tailwind preflight;
+@import "tailwindcss/preflight";
+@import "tailwindcss/components";
+
 
 @import "base/boilerplate";
 @import "base/typography";
@@ -12,7 +14,14 @@
 @import "components/pagination";
 
 @import "layouts/app";
+@import "layouts/app-wrapper";
+@import "layouts/app-sidebar";
+@import "layouts/app-main";
+@import "layouts/app-header";
+@import "layouts/app-content";
 
-@tailwind utilities;
+
+@import "tailwindcss/utilities";
+
 
 @import "base/utilities";

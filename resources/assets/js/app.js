@@ -42,6 +42,7 @@ const app = new Vue({
     mixins: [ require('./mixins/Sidebar.js').default ],
 })
 
+// Hook user-land components before mounting our Vue instance.
 window.Outline.boot(app)
 
 app.$mount('#app')
