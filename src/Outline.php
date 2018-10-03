@@ -2,6 +2,8 @@
 
 namespace Artisan\Outline;
 
+use Artisan\Outline\Navigation\Sidebar;
+
 class Outline
 {
     /**
@@ -10,6 +12,11 @@ class Outline
      * @var Closure
      */
     private $sidebar;
+
+    public function __construct(Sidebar $sidebar)
+    {
+        $this->sidebar = $sidebar;
+    }
 
     /**
      * Set the sidebar navigation.
@@ -24,32 +31,12 @@ class Outline
      * @param  Closure|null  $items
      * @return array|void
      */
-    public function sidebar($items = null)
+    public function sidebar($createSidebar = null)
     {
-        if (! $items) {
-            return $this->sidebar ? $this->sidebar->__invoke() : [];
+        if (! $createSidebar) {
+            return $this->sidebar;
         }
 
-        $this->sidebar = $items;
-    }
-
-    /**
-     * Still don't have a name or a place where to put this.
-     *
-     * I don't want to use a helper just for the posibility of a conflict
-     * with userland parallel thinking. (Even if I prefix it.)
-     *
-     * @param  string|array  $routes
-     * @return boolean
-     */
-    public function activeWhen($routes)
-    {
-        if (! is_array($routes)) {
-            $routes = array_wrap($routes);
-        }
-
-        return array_sum(array_map(function ($route) {
-            return str_contains(url()->current(), $route);
-        }, $routes));
+        $createSidebar->__invoke($this->sidebar);
     }
 }
