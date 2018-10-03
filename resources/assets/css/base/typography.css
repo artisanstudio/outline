@@ -2,11 +2,13 @@ html, body {
     @apply .leading-normal .tracking-normal .font-sans .font-normal .ms-base .bg-white .text-black;
 }
 
-h1, h2, h3, h4, h5, h6,
-.ms-lg, .ms-xl, .ms-2xl, .ms-3xl, .ms-4xl {
-    letter-spacing: -0.02em;
+h1, h2, h3, h4, h5, h6, .ms-lg {
+    letter-spacing: -0.016em;
 }
 
+.ms-xl, .ms-2xl, .ms-3xl, .ms-4xl {
+    letter-spacing: -0.05em;
+}
 
 .link {
     @apply .no-underline .text-grey-darker;
