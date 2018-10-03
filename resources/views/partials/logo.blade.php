@@ -1,1 +1,3 @@
-<h1 class="title">Outline</h1>
+<h1 class="title">
+    {{ config('outline.name') }}
+</h1>
