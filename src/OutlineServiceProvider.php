@@ -9,15 +9,41 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot()
     {
-        $this->registerResources();
-        $this->registerRoutes();
         $this->defineAssetPublishing();
-
-        $this->mergeConfigFrom(__DIR__ . '/../config/outline.php', 'outline');
+        $this->defineConfigPublishing();
 
         view()->composer('outline::layouts._sidebar', function ($view) {
             $view->with('sidebar', Outline::sidebar());
         });
+    }
+
+    private function defineConfigPublishing()
+    {
+        $configPath = __DIR__ . '/../config/outline.php';
+
+        $this->publishes(
+            [$configPath => config_path('semaphore.php')],
+            'outline-config'
+        );
+    }
+
+    public function defineAssetPublishing()
+    {
+        $this->publishes([
+            realpath(__DIR__ . '/../public') => public_path('vendor/outline'),
+        ], 'outline-assets');
+    }
+
+    public function register()
+    {
+        $this->registerResources();
+        $this->registerRoutes();
+        $this->registerConfig();
+    }
+
+    private function registerConfig()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../config/outline.php', 'outline');
     }
 
     private function registerResources()
@@ -35,16 +61,5 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         });
-    }
-
-    public function defineAssetPublishing()
-    {
-        $this->publishes([
-            realpath(__DIR__ . '/../public') => public_path('vendor/outline'),
-        ], 'outline-assets');
-    }
-
-    public function register()
-    {
     }
 }
