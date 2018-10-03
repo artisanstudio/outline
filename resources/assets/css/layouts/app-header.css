@@ -2,7 +2,7 @@
     @apply .py-4 .px-6 .flex;
 
     > .hamburger {
-        @apply .py-2 .px-2 .ml-auto;
+        @apply .py-2 .px-3 .ml-auto;
     }
 }
 

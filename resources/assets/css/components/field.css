@@ -9,14 +9,14 @@
         @apply .ms-sm .font-normal;
     }
 
-    .input {
+    > .control > .input {
         @apply .border .border-grey-lighter .bg-white .rounded-sm .w-full .py-3 .px-4 .block;
 
         outline: none;
         resize:  none;
     }
 
-    > .input[readonly] {
+    > .control > .input[readonly] {
         @apply .bg-grey-light;
     }
 
@@ -29,7 +29,7 @@
     }
 
     &.-error {
-        .input {
+        > .control > .input {
             border-color: #FFB263;
             background-color: #FFF0D1;
         }
@@ -40,13 +40,28 @@
     }
 
     &.-success {
-        .input {
+        > .control > .input {
             border-color: var(--green);
             background-color: #D4FFD1;
         }
 
         > .message {
             color: var(--green);
+        }
+    }
+
+    &.-with-icon {
+        > .control {
+            @apply .flex;
+        }
+
+        > .control > .icon {
+            @apply .border .border-r-0 .px-3 .text-grey-darker .rounded-l-sm
+                   .flex .items-center .justify-center;
+        }
+
+        > .control > .input {
+            @apply .rounded-l-none;
         }
     }
 }
