@@ -1,5 +1,5 @@
 <aside class="app-sidebar" :class="{ '-open': sidebar.open }">
-    @include('outline::partials.logo')
+    <h1 class="title">{{ config('outline.name') }}</h1>
 
     <nav class="navigation sidebar-navigation mb-4">
         <ul class="links">

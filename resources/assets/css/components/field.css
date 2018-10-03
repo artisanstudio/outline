@@ -1,42 +1,52 @@
-.field {
-    @apply relative;
+.form-field {
+    @apply .relative;
+
+    > .label {
+        @apply .block .font-semibold .mb-2 .text-14;
+    }
+
+    > .label > .optional {
+        @apply .ms-sm .font-normal;
+    }
+
+    .input {
+        @apply .border .border-grey-lighter .bg-white .rounded-sm .w-full .py-3 .px-4 .block;
+
+        outline: none;
+        resize:  none;
+    }
+
+    > .input[readonly] {
+        @apply .bg-grey-light;
+    }
+
+    > .message {
+        @apply .italic .m-0 .mt-2 .text-14 .leading-tight;
+    }
+
+    > .hint {
+        @apply .text-14 .p-4 .bg-grey-lighter .text-grey-darkest .italic .leading-none;
+    }
+
+    &.-error {
+        .input {
+            border-color: #FFB263;
+            background-color: #FFF0D1;
+        }
+
+        > .message {
+            color: #FFB263;
+        }
+    }
+
+    &.-success {
+        .input {
+            border-color: var(--green);
+            background-color: #D4FFD1;
+        }
+
+        > .message {
+            color: var(--green);
+        }
+    }
 }
-
-.field-label {
-    @apply block font-semibold mb-2;
-}
-
-.field-input {
-    outline: none;
-    resize:  none;
-
-    @apply border border-grey-lighter bg-white rounded-sm w-full p-2;
-}
-
-.field-input[readonly] {
-    @apply .bg-grey-light;
-}
-
-.field-message {
-    font-size: .875em;
-    font-style: italic;
-    margin: 0;
-    margin-top: 0.5em;
-}
-
-.field.has-error .field-input {
-    border-color: #FFB263;
-    background-color: #FFF0D1;
-}
-
-.field.has-success .field-input {
-    border-color: var(--green);
-    background-color: #D4FFD1;
-}
-
-.field-hint {
-    @apply p-4 bg-grey-lighter text-grey-darker italic leading-none;
-}
-
-.field-message.is-error   { color: #FFB263; }
-.field-message.is-success { color: var(--green); }

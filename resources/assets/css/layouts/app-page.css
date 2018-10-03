@@ -6,4 +6,8 @@
     > .header > .caption {
         @apply .text-grey-darker;
     }
+
+    > .header > .caption > p + p {
+        @apply .mt-2;
+    }
 }
