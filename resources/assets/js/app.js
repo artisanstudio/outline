@@ -19,6 +19,7 @@ import Vue from 'vue'
 
 import store from './vuex/store'
 import Sidebar from './mixins/Sidebar.js'
+import Search from './mixins/Search.js'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -26,6 +27,7 @@ import Sidebar from './mixins/Sidebar.js'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('search-overlay', require('./components/SearchOverlay'))
 Vue.component('card', require('./components/Card'))
 Vue.component('menu-item', require('./components/MenuItem'))
 
@@ -50,6 +52,6 @@ const app = new Vue({
     store,
 
     mixins: [
-        Sidebar,
+        Sidebar, Search,
     ],
 })

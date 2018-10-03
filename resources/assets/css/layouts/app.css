@@ -1,23 +1,38 @@
-@media(max-width: config('screens.md')) {
-    .app-sidebar, .app-main {
-        transition: transform .25s ease-in-out;
+.app-sidebar, .app-main {
+    transition: transform .25s ease-in-out;
+}
+
+.app-wrapper {
+    &.-sidebar-open {
+        @apply .overflow-hidden;
     }
 
+    &.-sidebar-open > .app-main {
+        transform: translateX(0);
+    }
+}
+
+.app-sidebar {
+    transform: translateX(-100%);
+
+    &.-open {
+        @apply .shadow-lg;
+        transform: translateX(0);
+    }
+}
+
+@screen md {
     .app-wrapper {
         &.-sidebar-open {
-            @apply .overflow-hidden;
+            @apply .overflow-auto;
         }
 
         &.-sidebar-open > .app-main {
-            transform: translateX(config('width.sidebar'));
+            transform: translateX(0);
         }
     }
 
     .app-sidebar {
-        transform: translateX(calc(-1 * config('width.sidebar')));
-
-        &.-open {
-            transform: translateX(0);
-        }
+        transform: translateX(0);
     }
 }

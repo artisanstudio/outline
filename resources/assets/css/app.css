@@ -12,6 +12,7 @@
 @import "components/field";
 @import "components/card";
 @import "components/pagination";
+@import "components/search-overlay";
 
 @import "layouts/app";
 @import "layouts/app-wrapper";

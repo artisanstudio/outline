@@ -72,6 +72,19 @@ class Item
     }
 
     /**
+     * A collection of routes.
+     *
+     * @param  array  $routes
+     * @return Item
+     */
+    public function scope($routes)
+    {
+        $this->scope->push($routes);
+
+        return $this;
+    }
+
+    /**
      * Get the state if the current route is within scope.
      *
      * @return string

@@ -32,6 +32,10 @@
                     @yield('content')
                 </main>
             </section>
+
+            <transition name="fade">
+                <search-overlay v-if="isSearching"></search-overlay>
+            </transition>
         </section>
 
         <script type="text/javascript" src="/vendor/outline/js/manifest.js"></script>
