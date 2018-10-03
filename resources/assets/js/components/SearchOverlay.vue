@@ -18,9 +18,9 @@
 </template>
 
 <script>
+import { debounce } from '../helpers.js'
 import axios from 'axios'
 import SearchResultSet from './SearchResultSet'
-import { debounce } from '../helpers.js'
 
 export default {
     props: { api: String },
@@ -35,11 +35,9 @@ export default {
         })
     },
 
-    data() {
-        return {
-            results: {}
-        }
-    },
+    data: () => ({
+        results: {}
+    }),
 
     methods: {
         search: debounce(function (event) {
