@@ -24,7 +24,7 @@
     }
 
     > .input {
-        @apply .ms-3xl .mt-8 .font-bold;
+        @apply .ms-3xl .mt-8 .font-black;
 
         letter-spacing: -0.025em;
         outline: none;
@@ -45,13 +45,19 @@
             @apply .font-bold .text-grey;
         }
     }
+
+    > .results {
+        @apply .grid;
+    }
+
+    > .results > .result {
+        @apply .col-2;
+    }
 }
 
 @screen md {
     .search-overlay {
         > .input {
-            @apply .font-black;
-
             letter-spacing: -0.05em;
             font-size: 90px;
         }

@@ -34,7 +34,11 @@
             </section>
 
             <transition name="fade">
-                <search-overlay v-if="isSearching" @close="closeGlobalSearch()"></search-overlay>
+                <search-overlay
+                    v-if="isSearching"
+                    @close="closeGlobalSearch()"
+                    api="/{{ config('outline.prefix') }}/search">
+                </search-overlay>
             </transition>
         </section>
 
