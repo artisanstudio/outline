@@ -9,34 +9,22 @@ class Outline
     /**
      * The sidebar handler.
      *
-     * @var Closure
+     * @var Sidebar
      */
     private $sidebar;
 
-    public function __construct(Sidebar $sidebar)
-    {
-        $this->sidebar = $sidebar;
-    }
-
     /**
-     * Set the sidebar navigation.
-     *
-     * We use a closure on the parameter over an array since if
-     * we use route names for the path, the router will throw an
-     * error since they aren't registered yet.
-     *
-     * Using a closure will only execute the sidebar on the view.
-     * Although I have zero knowledge if this is actually performant.
+     * Create the sidebar.
      *
      * @param  Closure|null  $items
      * @return array|void
      */
-    public function sidebar($createSidebar = null)
+    public function sidebar()
     {
-        if (! $createSidebar) {
-            return $this->sidebar;
+        if (! $this->sidebar) {
+            $this->sidebar = new Sidebar;
         }
 
-        $createSidebar->__invoke($this->sidebar);
+        return $this->sidebar;
     }
 }

@@ -15,7 +15,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         $this->app->booted(function () {
-            $this->sidebar(Outline::sidebar());
+            $this->registerSidebar(Outline::sidebar());
         });
     }
 
