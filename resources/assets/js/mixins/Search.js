@@ -32,5 +32,9 @@ export default {
         openGlobalSearch() {
             this.isSearching = true
         },
+
+        closeGlobalSearch() {
+            this.isSearching = false
+        },
     },
 }

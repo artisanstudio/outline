@@ -11,6 +11,18 @@
         @apply .text-grey-darker .italic;
     }
 
+    > .close {
+        @apply .absolute .ms-xl .text-grey-dark;
+
+        line-height: 0.75;
+        top: config('padding.16');
+        right: config('padding.8');
+    }
+
+    > .close > .shortcut {
+        @apply .block .text-14 .no-underline;
+    }
+
     > .input {
         @apply .ms-3xl .mt-8 .font-bold;
 

@@ -34,7 +34,7 @@
             </section>
 
             <transition name="fade">
-                <search-overlay v-if="isSearching"></search-overlay>
+                <search-overlay v-if="isSearching" @close="closeGlobalSearch()"></search-overlay>
             </transition>
         </section>
 

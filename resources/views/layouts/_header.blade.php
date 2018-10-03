@@ -1,9 +1,9 @@
 <header class="app-header">
-    <a href="#" class="button" @click.prevent="openGlobalSearch()">
+    <button type="button" class="button" @click.prevent="openGlobalSearch()">
         <i class="icon icon-search"></i>
-    </a>
+    </button>
 
-    <a href="#" class="hamburger button" @click.prevent="openSidebar()">
+    <button type="button" class="hamburger button" @click.prevent="openSidebar()">
         <i class="icon icon-menu"></i>
-    </a>
+    </button>
 </header>
