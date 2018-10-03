@@ -4,56 +4,12 @@ namespace Artisan\Outline;
 
 class Outline
 {
+    /**
+     * The sidebar handler.
+     *
+     * @var Closure
+     */
     private $sidebar;
-
-    /**
-     * The file that will be injected to the layout.
-     *
-     * @var array
-     */
-    private $files = [
-        'styles'  => [],
-        'scripts' => [],
-    ];
-
-    /**
-     * Pull in the file from the file asset reference.
-     *
-     * @param  string  $name
-     * @return string
-     */
-    public function file($name)
-    {
-        if ($file = array_get($this->files, "styles.{$name}")) {
-            return $file;
-        }
-
-        return array_get($this->files, "scripts.{$name}");
-    }
-
-    /**
-     * Add a script at the bottom of the document.
-     *
-     * @param  string  $name
-     * @param  string  $file
-     * @return void
-     */
-    public function script($name, $file)
-    {
-        array_set($this->files, "scripts.{$name}", $file);
-    }
-
-    /**
-     * Add a style to head of the document.
-     *
-     * @param  string  $name
-     * @param  string  $file
-     * @return void
-     */
-    public function style($name, $file)
-    {
-        array_set($this->files, "styles.{$name}", $file);
-    }
 
     /**
      * Set the sidebar navigation.
