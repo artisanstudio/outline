@@ -19,7 +19,7 @@
             </SearchResultSet>
         </section>
 
-        <p v-if="! isLoading && ! hasResults && query">No results</p>
+        <p class="mt-8 italic text-grey-dark" v-if="! isLoading && ! hasResults && query">No results</p>
     </section>
 </template>
 
