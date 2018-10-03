@@ -11,4 +11,10 @@ return [
      * The prefix of the Outline routes.
      */
      'prefix' => 'admin',
+
+    /**
+     * The models to search.
+     */
+    'search' => [
+    ],
 ];
