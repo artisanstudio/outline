@@ -50,7 +50,7 @@
         @apply .grid;
     }
 
-    > .results > .result {
+    > .results > .set {
         @apply .col-4;
     }
 }
@@ -61,5 +61,35 @@
             letter-spacing: -0.05em;
             font-size: 90px;
         }
+    }
+}
+
+.search-result-set {
+    > .header > .title {
+        @apply .uppercase .ms-base .border-b .pb-2 .text-14;
+    }
+
+    > .results {
+        @apply .list-reset .mt-6;
+    }
+
+    > .results > .result {
+        @apply .flex .items-center .mb-4 .no-underline .text-black;
+    }
+
+    > .results > .result > .image {
+        @apply .h-12 .w-12 .mr-2 .rounded-sm;
+    }
+
+    > .results > .result > .content {
+        @apply .leading-tight;
+    }
+
+    > .results > .result > .content > .title {
+        @apply .ms-base;
+    }
+
+    > .results > .result > .content > .subtitle {
+        @apply .ms-base .text-14 .text-grey-darker;
     }
 }

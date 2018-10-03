@@ -11,7 +11,7 @@
         <input id="global-search" class="input" name="" type="text" placeholder="Type Here..." ref="input" @keyup="search">
 
         <section class="results mt-8">
-            <SearchResultSet v-for="(items, name) in results" :name="name" :results="items" :key="name">
+            <SearchResultSet v-for="(items, name) in results" :name="name" :results="items" :key="name" v-if="items.length">
             </SearchResultSet>
         </section>
     </section>

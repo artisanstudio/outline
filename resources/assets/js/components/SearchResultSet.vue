@@ -1,21 +1,21 @@
 <template>
-    <section class="result">
-        <h2 class="title uppercase ms-base border-b mb-4">
-            {{ name }}
-            <small>{{ results.length }}</small>
-        </h2>
+    <section class="set search-result-set">
+        <header class="header">
+            <h2 class="title">
+                {{ name }}
+                <span class="length">({{ results.length }})</span>
+            </h2>
+        </header>
 
-
-        <span v-if="! results.length">No results</span>
-        <ul class="list-reset" v-else>
-            <li class="flex mb-2" v-for="result in resultsToShow">
-                <img class="h-8 w-8" v-if="result.image" :src="result.image">
-                <div class="content ml-2">
-                    <h3>{{ result.title }}</h3>
-                    <p>{{ result.subtitle }}</p>
+        <div class="results">
+            <a :href="result.link" class="result" v-for="result in resultsToShow">
+                <img class="image" v-if="result.image" :src="result.image">
+                <div class="content">
+                    <h3 class="title">{{ result.title }}</h3>
+                    <p class="subtitle">{{ result.subtitle }}</p>
                 </div>
-            </li>
-        </ul>
+            </a>
+        </div>
     </section>
 </template>
 
