@@ -10,7 +10,7 @@
 
         <input id="global-search" class="input" name="" type="text" placeholder="Type Here..." ref="input" @keyup="search" v-model="query">
 
-        <div class="loader" v-if="isLoading">
+        <div class="loader mt-8" v-if="isLoading">
             <div></div> <div></div> <div></div>
         </div>
 

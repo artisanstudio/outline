@@ -2,7 +2,9 @@ html, body {
     @apply .leading-normal .tracking-normal .font-sans .font-normal .ms-base .bg-white .text-black;
 }
 
-h1, h2, h3, h4, h5, h6, strong {
+h1, h2, h3, h4, h5, h6,
+.ms-lg, .ms-xl, .ms-2xl, .ms-3xl, .ms-4xl {
+    letter-spacing: -0.02em;
 }
 
 
