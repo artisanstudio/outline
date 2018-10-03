@@ -28,7 +28,7 @@ export default {
 
     computed: {
         resultsToShow() {
-            return this.results.slice(0, 8)
+            return this.results.slice(0, 6)
         },
     },
 }

@@ -6,13 +6,15 @@ class SearchController
 {
     public function index()
     {
-        return collect(config('outline.search'))->mapWithKeys(function ($options, $model) {
-            $results = $model::search(request()->q)->get();
+        return collect(config('outline.search'))->mapWithKeys(function ($model, $key) {
+            $name = $key;
+
+            if (is_numeric($key)) {
+                $name = str_plural(class_basename($model));
+            }
 
             return [
-                $options['name'] => $results->map(function ($result) use ($options) {
-                    return $options['resource']($result);
-                })
+                $name => $model::search(request()->q)->get()->map->toSearchPreview(),
             ];
         });
     }
