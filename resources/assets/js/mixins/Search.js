@@ -17,6 +17,15 @@ export default {
                 this.isSearching = false
             }
         })
+
+        window.addEventListener('paste', (event) => {
+            this.isSearching = true
+
+            this.$nextTick(() => {
+                document.querySelector('#global-search').focus()
+                document.querySelector('#global-search').select()
+            })
+        })
     },
 
     methods: {
