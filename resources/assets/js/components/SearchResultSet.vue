@@ -8,9 +8,12 @@
 
         <span v-if="! results.length">No results</span>
         <ul class="list-reset" v-else>
-            <li v-for="result in results">
-                <strong v-if="result.title">{{ result.title }}</strong>
-                <strong v-else>{{ result.id }}</strong>
+            <li class="flex mb-2" v-for="result in resultsToShow">
+                <img class="h-8 w-8" v-if="result.image" :src="result.image">
+                <div class="content ml-2">
+                    <h3>{{ result.title }}</h3>
+                    <p>{{ result.subtitle }}</p>
+                </div>
             </li>
         </ul>
     </section>
@@ -21,6 +24,12 @@ export default {
     props: {
         name: String,
         results: Array,
+    },
+
+    computed: {
+        resultsToShow() {
+            return this.results.slice(0, 8)
+        },
     },
 }
 </script>
