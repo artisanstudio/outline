@@ -29,13 +29,13 @@
     > .links > .item > .button:hover {
         --button-bg:     config('colors.white');
         --button-border: config('colors.white');
-        --button-text:   config('colors.blue');
+        --button-text:   config('colors.primary');
     }
 
     > .links > .item.-active > .button {
         --button-bg:     config('colors.white');
         --button-border: config('colors.white');
-        --button-text:   config('colors.blue');
+        --button-text:   config('colors.primary');
 
         @apply .font-bold .shadow-md;
     }

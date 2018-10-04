@@ -4,6 +4,7 @@
 @import "tailwindcss/components";
 
 
+@import "base/variables";
 @import "base/boilerplate";
 @import "base/typography";
 @import "base/icons";

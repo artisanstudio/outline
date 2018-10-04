@@ -16,22 +16,22 @@ html, body, .app-wrapper, .app-sidebar {
 }
 
 .table td, .table th {
-    @apply py-2 border-b;
+    @apply .py-2 .border-b;
 }
 
 .table tr:last-of-type td {
-    @apply border-b-0;
+    @apply .border-b-0;
 }
 
 .money {
-    @apply inline-flex font-bold;
+    @apply .inline-flex .font-bold;
 }
 
 .money:before {
+    @apply .font-normal;
+
     content: '₱';
     margin-right: 1px;
-
-    @apply font-normal;
 }
 
 .money:after {

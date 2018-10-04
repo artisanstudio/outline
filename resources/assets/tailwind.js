@@ -57,13 +57,13 @@ let colors = {
     'offwhite':      '#f7f7f7',
 
     'blue':          '#1e8cf9',
-    'pink':          '#ff1d8d',
     'yellow':        '#fcd603',
     'green':         '#03fc0d',
     'red':           '#fc0303',
-}
 
-let primaryColor = 'blue'
+    'artisan':       '#ff1d8d',
+    'primary':       'var(--primary)',
+}
 
 module.exports = {
 
@@ -80,7 +80,7 @@ module.exports = {
     |
     */
 
-    colors: Object.assign({ primary: colors[primaryColor] }, colors),
+    colors: colors,
 
 
     /*
@@ -270,7 +270,7 @@ module.exports = {
     |
     */
 
-    textColors: Object.assign({ primary: colors[primaryColor] }, colors),
+    textColors: colors,
 
 
     /*
@@ -287,7 +287,7 @@ module.exports = {
     */
 
 
-    backgroundColors: Object.assign({ primary: colors[primaryColor] }, colors),
+    backgroundColors: colors,
 
 
     /*
@@ -329,10 +329,7 @@ module.exports = {
     |
     */
 
-    borderColors: Object.assign({
-        default: colors['grey-lighter'],
-        primary: colors[primaryColor],
-    }, colors),
+    borderColors: Object.assign({ default: colors['grey-lighter'] }, colors),
 
 
     /*
