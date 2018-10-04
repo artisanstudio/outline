@@ -1,0 +1,111 @@
+.card {
+    @apply .relative .border .rounded;
+
+    &.-active, &:hover {
+        @apply .shadow-md;
+        transform: translateY(-2px);
+    }
+
+    &, > .kebab {
+        transition: box-shadow 0.2s,
+                    opacity 0.2s,
+                    transform 0.2s ease-in-out;
+    }
+
+    > .kebab {
+        @apply .flex .items-center .justify-center .p-1 .absolute .z-30;
+
+        height: 36px;
+        width:  36px;
+        top:   config('padding.4');
+        right: config('padding.4');
+    }
+
+    > .kebab:hover {
+        @apply .bg-offwhite .border-grey-lighter;
+    }
+
+    > .kebab:focus {
+        outline: none;
+    }
+
+    > .kebab:hover {
+        transform: translateY(-2px);
+    }
+
+    > .kebab > .dot + .dot {
+        margin-left: 3px;
+    }
+
+    > .kebab > .dot {
+        @apply .block .rounded-full .bg-grey;
+        height: 3px;
+        width:  3px;
+    }
+
+    > .kebab:hover > .dot {
+        @apply .bg-grey-dark;
+    }
+
+    > .overlay {
+        @apply .bg-overlay .h-full .w-full .rounded-sm .absolute .pin .z-40;
+    }
+
+    > .overlay.fade-leave-active {
+        transition-delay: 0.2s;
+    }
+
+    > .content {
+        @apply .no-underline .text-14 .text-grey-darkest .h-full
+               .flex .flex-col;
+    }
+}
+
+.card > .menu {
+    @apply .bg-white .rounded-sm .shadow-md
+           .absolute .z-50;
+
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    &.animate-enter-active,
+    &.animate-leave-active {
+        transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &.animate-enter,
+    &.animate-leave-to {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    > .menu-items {
+        @apply .list-reset .m-0 .p-0 .text-14;
+    }
+
+    a, button, form {
+        @apply .block;
+    }
+
+    a {
+        @apply .no-underline;
+    }
+}
+
+.card > .menu > .menu-items {
+    > .menu-item:first-of-type {
+        @apply .rounded-t-sm;
+    }
+
+    > .menu-item:last-of-type {
+        @apply .rounded-b-sm;
+    }
+
+    > .menu-item {
+        @apply .px-6 .py-3 .whitespace-no-wrap;
+    }
+
+    > .menu-item:hover {
+        @apply .bg-grey-lightest;
+    }
+}

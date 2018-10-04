@@ -1,0 +1,32 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+
+@import "tailwindcss/preflight";
+@import "tailwindcss/components";
+
+
+@import "base/variables";
+@import "base/boilerplate";
+@import "base/typography";
+@import "base/icons";
+
+@import "components/loader";
+@import "components/button";
+@import "components/field";
+@import "components/card";
+@import "components/pagination";
+@import "components/search-overlay";
+
+@import "layouts/app";
+@import "layouts/app-wrapper";
+@import "layouts/app-sidebar";
+@import "layouts/app-overlay";
+@import "layouts/app-main";
+@import "layouts/app-header";
+@import "layouts/app-content";
+@import "layouts/app-page";
+
+
+@import "tailwindcss/utilities";
+
+
+@import "base/utilities";

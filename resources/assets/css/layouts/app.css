@@ -1,0 +1,38 @@
+.app-sidebar, .app-main {
+    transition: transform .25s ease-in-out;
+}
+
+.app-wrapper {
+    &.-sidebar-open {
+        @apply .overflow-hidden;
+    }
+
+    &.-sidebar-open > .app-main {
+        transform: translateX(0);
+    }
+}
+
+.app-sidebar {
+    transform: translateX(-100%);
+
+    &.-open {
+        @apply .shadow-lg;
+        transform: translateX(0);
+    }
+}
+
+@screen md {
+    .app-wrapper {
+        &.-sidebar-open {
+            @apply .overflow-auto;
+        }
+
+        &.-sidebar-open > .app-main {
+            transform: translateX(0);
+        }
+    }
+
+    .app-sidebar {
+        transform: translateX(0);
+    }
+}

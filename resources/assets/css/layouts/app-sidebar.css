@@ -1,0 +1,48 @@
+.app-sidebar {
+    @apply .flex-no-shrink .flex-no-grow;
+    @apply .bg-primary .w-sidebar .p-8 .fixed .pin .z-50;
+
+    > .title {
+        @apply .text-white .ms-lg .px-4 .mb-8;
+
+        letter-spacing: -0.011em;
+    }
+
+    > .navigation {
+        @apply .text-14 .text-white;
+    }
+}
+
+.sidebar-navigation {
+    > .links {
+        @apply .list-reset;
+    }
+
+    > .links > .item {
+        @apply .mb-2;
+    }
+
+    > .links > .item > .button {
+        --button-text: config('colors.white');
+    }
+
+    > .links > .item > .button:hover {
+        --button-bg:     config('colors.white');
+        --button-border: config('colors.white');
+        --button-text:   config('colors.primary');
+    }
+
+    > .links > .item.-active > .button {
+        --button-bg:     config('colors.white');
+        --button-border: config('colors.white');
+        --button-text:   config('colors.primary');
+
+        @apply .font-bold .shadow-md;
+    }
+}
+
+@screen md {
+    .app-sidebar {
+        @apply .block .px-6 .static;
+    }
+}

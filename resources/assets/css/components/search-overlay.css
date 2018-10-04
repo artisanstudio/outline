@@ -1,0 +1,95 @@
+.search-overlay {
+    @apply .absolute .pin .min-h-screen .w-full .z-50 .p-8 .py-16;
+
+    background-color: rgba(255, 255, 255, 0.98);
+
+    > .title {
+        @apply .ms-xl .tracking-tight;
+    }
+
+    > .caption {
+        @apply .text-grey-darker .italic;
+    }
+
+    > .close {
+        @apply .absolute .ms-xl .text-grey-dark;
+
+        line-height: 0.75;
+        top: config('padding.16');
+        right: config('padding.8');
+    }
+
+    > .close > .shortcut {
+        @apply .block .text-14 .no-underline;
+    }
+
+    > .input {
+        @apply .ms-3xl .mt-8 .font-black;
+
+        letter-spacing: -0.025em;
+        outline: none;
+
+        &::-webkit-input-placeholder {
+            @apply .font-bold .text-grey;
+        }
+
+        &::-moz-placeholder {
+            @apply .font-bold .text-grey;
+        }
+
+        &:-ms-input-placeholder {
+            @apply .font-bold .text-grey;
+        }
+
+        &:-moz-placeholder {
+            @apply .font-bold .text-grey;
+        }
+    }
+
+    > .results {
+        @apply .grid;
+    }
+
+    > .results > .set {
+        @apply .col-4;
+    }
+}
+
+@screen md {
+    .search-overlay {
+        > .input {
+            letter-spacing: -0.05em;
+            font-size: 90px;
+        }
+    }
+}
+
+.search-result-set {
+    > .header > .title {
+        @apply .uppercase .ms-base .border-b .pb-2 .text-14;
+    }
+
+    > .results {
+        @apply .list-reset .mt-6;
+    }
+
+    > .results > .result {
+        @apply .flex .items-center .mb-4 .no-underline .text-black;
+    }
+
+    > .results > .result > .image {
+        @apply .h-12 .w-12 .mr-2 .rounded-sm;
+    }
+
+    > .results > .result > .content {
+        @apply .leading-tight;
+    }
+
+    > .results > .result > .content > .title {
+        @apply .ms-base;
+    }
+
+    > .results > .result > .content > .subtitle {
+        @apply .ms-base .text-14 .text-grey-darker;
+    }
+}

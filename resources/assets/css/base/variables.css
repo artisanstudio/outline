@@ -1,0 +1,5 @@
+:root {
+    --primary: #1e8cf9;
+    --chart-fill: var(--primary);
+    --chart-stroke: var(--primary);
+}

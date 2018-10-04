@@ -9,7 +9,11 @@
             "email": "jaggy@artisan.studio"
         }
     ],
-    "require": {},
+    "require": {
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6"
+    },
     "autoload": {
         "psr-4": {
             "Artisan\\Outline\\": "src"
@@ -24,5 +28,12 @@
         "sort-packages": true
     },
     "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Artisan\\Outline\\OutlineServiceProvider"
+            ]
+        }
+    }
 }

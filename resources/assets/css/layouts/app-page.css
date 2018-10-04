@@ -1,0 +1,13 @@
+.app-page {
+    > .header > .title {
+        @apply .ms-2xl .tracking-tight;
+    }
+
+    > .header > .caption {
+        @apply .text-grey-darker;
+    }
+
+    > .header > .caption > p + p {
+        @apply .mt-2;
+    }
+}

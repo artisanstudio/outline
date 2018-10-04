@@ -1,0 +1,32 @@
+.pagination {
+    @apply list-reset flex;
+}
+
+.pagination li > a,
+.pagination li > span {
+    @apply block border no-underline;
+    @apply flex items-center justify-center h-full;
+    @apply border-r-0 text-black;
+
+    height: 30px;
+    width:  30px;
+}
+
+.pagination li > a:hover {
+    @apply bg-offwhite;
+}
+
+.pagination .active > span {
+    @apply text-primary;
+}
+
+.pagination li:first-of-type > a,
+.pagination li:first-of-type > span {
+    @apply rounded-l-sm;
+}
+
+.pagination li:last-of-type > a,
+.pagination li:last-of-type > span {
+    @apply rounded-r-sm;
+    @apply border-r;
+}

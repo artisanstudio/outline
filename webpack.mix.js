@@ -1,7 +1,4 @@
-let tailwind = require('tailwindcss')
-let { mix }  = require('laravel-mix')
-
-require('laravel-mix-purgecss')
+let { mix } = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -14,11 +11,19 @@ require('laravel-mix-purgecss')
  |
  */
 
-mix.options({
-    processCssUrls: false,
-    postCss: [
-        tailwind('./resources/assets/admin/tailwind.js'),
-    ],
-}).sass('resources/assets/admin/sass/primer.scss',  'public/css')
-  .js('resources/assets/admin/js/primer.js', 'public/js')
-  .extract(['vue', 'axios'])
+mix
+    .setPublicPath('public')
+    .postCss('resources/assets/css/app.css', 'public/css', [
+        require('postcss-import')(),
+        require('postcss-nested')(),
+        require('tailwindcss')('./resources/assets/tailwind.js'),
+    ])
+    .js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/bootstrap.js', 'public/js')
+    .extract(['vue', 'vuex'])
+    .sourceMaps()
+
+    // Development
+    .copy('public', '../../public/vendor/outline')
+
+    .version()

@@ -1,0 +1,67 @@
+.form-field {
+    @apply .relative;
+
+    > .label {
+        @apply .block .font-semibold .mb-2 .text-14;
+    }
+
+    > .label > .optional {
+        @apply .ms-sm .font-normal;
+    }
+
+    > .control > .input {
+        @apply .border .border-grey-lighter .bg-white .rounded-sm .w-full .py-3 .px-4 .block;
+
+        outline: none;
+        resize:  none;
+    }
+
+    > .control > .input[readonly] {
+        @apply .bg-grey-light;
+    }
+
+    > .message {
+        @apply .italic .m-0 .mt-2 .text-14 .leading-tight;
+    }
+
+    > .hint {
+        @apply .text-14 .p-4 .bg-grey-lighter .text-grey-darkest .italic .leading-none;
+    }
+
+    &.-error {
+        > .control > .input {
+            border-color: #FFB263;
+            background-color: #FFF0D1;
+        }
+
+        > .message {
+            color: #FFB263;
+        }
+    }
+
+    &.-success {
+        > .control > .input {
+            border-color: var(--green);
+            background-color: #D4FFD1;
+        }
+
+        > .message {
+            color: var(--green);
+        }
+    }
+
+    &.-with-icon {
+        > .control {
+            @apply .flex;
+        }
+
+        > .control > .icon {
+            @apply .border .border-r-0 .px-3 .text-grey-darker .rounded-l-sm
+                   .flex .items-center .justify-center;
+        }
+
+        > .control > .input {
+            @apply .rounded-l-none;
+        }
+    }
+}
