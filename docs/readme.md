@@ -1,5 +1,7 @@
 # Artisan Outline
 
+**Still WIP, use at your own risk.**
+
 Outline is an admin dashboard for Laravel.
 
 ## Installation
