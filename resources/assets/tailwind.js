@@ -396,6 +396,7 @@ module.exports = {
         'full':   '100%',
         'screen': '100vw',
 
+        'user-nav': '175px',
         'sidebar': '260px',
     },
 

@@ -20,6 +20,7 @@ import Vue from 'vue'
 import store from './vuex/store'
 import Sidebar from './mixins/Sidebar.js'
 import Search from './mixins/Search.js'
+import UserNavigation from './mixins/UserNavigation.js'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -52,6 +53,6 @@ const app = new Vue({
     store,
 
     mixins: [
-        Sidebar, Search,
+        Sidebar, Search, UserNavigation,
     ],
 })
