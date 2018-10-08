@@ -6,4 +6,6 @@
     <button type="button" class="hamburger button" @click.prevent="openSidebar()">
         <i class="icon icon-menu"></i>
     </button>
+
+    @include('outline::partials.user-nav')
 </header>

@@ -2,9 +2,12 @@
 
 namespace Artisan\Outline;
 
+use Illuminate\Support\Str;
+use Laravel\Scout\Searchable as ScoutSearchable;
+
 trait Searchable
 {
-    use \Laravel\Scout\Searchable;
+    use ScoutSearchable;
 
     /**
      * Use the class name plus `_index` as the default index name.
@@ -13,7 +16,9 @@ trait Searchable
      */
     public function searchableAs()
     {
-        return strtolower(class_basename(static::class)) . '_index';
+        return str_replace(
+            '\\', '', Str::snake(Str::plural(class_basename($this)))
+        );
     }
 
     /**
@@ -24,8 +29,14 @@ trait Searchable
      */
     public function toSearchableArray()
     {
-        return collect(static::$search)->mapWithKeys(function ($key) {
-            return [$key => $this->getAttribute($key)];
+        return collect(static::$search)->mapWithKeys(function ($field, $alias) {
+            if (is_numeric($alias)) {
+                $alias = $field;
+            }
+
+            return [
+                $alias => $this->getAttribute($field)
+            ];
         })->toArray();
     }
 
