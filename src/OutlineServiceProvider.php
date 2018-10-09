@@ -2,8 +2,9 @@
 
 namespace Artisan\Outline;
 
-use Facades\Artisan\Outline\Outline;
+use Spatie\BladeX\Facades\BladeX;
 use Illuminate\Support\Facades\Route;
+use Facades\Artisan\Outline\Outline;
 
 class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -17,6 +18,17 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->defineAssetPublishing();
         $this->defineConfigPublishing();
         $this->shareSidebarNavigation();
+        $this->registerBladeXComponents();
+    }
+
+    /**
+     * Register the custom blade components.
+     *
+     * @return void
+     */
+    private function registerBladeXComponents()
+    {
+        BladeX::component('outline::components.text-field')->tag('o-text-field');
     }
 
     /**
