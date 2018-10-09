@@ -28,7 +28,11 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     private function registerBladeXComponents()
     {
-        BladeX::component('outline::components.text-field')->tag('o-text-field');
+        BladeX::component('outline::components.text-field')
+            ->viewModel(Components\Field::class)
+            ->tag('ol-text-field');
+
+        // BladeX::component('outline::components.textarea')->tag('o-text-field');
     }
 
     /**

@@ -1,6 +1,6 @@
 <div class="form-field
             {{ $name }}
-            {{ $errors->has($name) ? '-error' : null }}
+            {{ $error ? '-error' : null }}
             {{ $class ?? null }}">
 
     <label for="{{ $name }}" class="label">
@@ -14,22 +14,22 @@
     <div class="control">
         <input id="{{ $name }}"
                class="input"
-               type="{{ $type ?? 'text' }}"
+               type="text"
                name="{{ $name }}"
-               value="{{ old($name, $value ?? null) }}"
+               value="{{ $value }}"
                placeholder="{{ $placeholder ?? null }}"
 
                @if($autofocus ?? false)
                    autofocus
                @endif
 
-               @if($model ?? false)
-                   v-model="{{ $model }}"
+               @if($vModel ?? false)
+                   v-model="{{ $vModel }}"
                @endif
         >
     </div>
 
-    @if(($showError ?? true) && $errors->has($name))
-        <p class="message">{!! $errors->get($name)[0] !!}</p>
+    @if((! ($silent ?? false)) && $error)
+        <p class="message">{!! $error !!}</p>
     @endif
 </div>
