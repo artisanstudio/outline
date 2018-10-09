@@ -2,7 +2,7 @@
     @apply .relative;
 
     > .label {
-        @apply .block .font-semibold .mb-2 .text-14;
+        @apply .block .font-semibold .mb-1 .text-14;
     }
 
     > .label > .optional {
@@ -10,7 +10,7 @@
     }
 
     > .control > .input {
-        @apply .border .border-grey-lighter .bg-white .rounded-sm .w-full .py-3 .px-4 .block;
+        @apply .border .border-grey-lighter .bg-white .rounded-sm .w-full .py-3 .px-4 .block .tracking-tight;
 
         outline: none;
         resize:  none;
@@ -18,6 +18,10 @@
 
     > .control > .input[readonly] {
         @apply .bg-grey-light;
+    }
+
+    > .control > .input:focus {
+        outline: 1px solid config('colors.primary');
     }
 
     > .message {
