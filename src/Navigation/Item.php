@@ -40,7 +40,7 @@ class Item
      */
     public function link($link)
     {
-        $this->link = $link;
+        $this->link = str_start($link, config('app.url'));
 
         return $this;
     }
@@ -49,11 +49,14 @@ class Item
      * Assign the link using a route name instead.
      *
      * @param  string  $route
+     * @param  string  $parameters
      * @return Item
      */
-    public function route($route)
+    public function route($route, $parameters = [])
     {
-        return $this->link(route($route));
+        return $this->link(
+            route($route, $parameters, true)
+        );
     }
 
     /**
@@ -79,7 +82,7 @@ class Item
      */
     public function scope($routes)
     {
-        $this->scope->push($routes);
+        $this->scope = $this->scope->merge($routes);
 
         return $this;
     }
@@ -108,7 +111,7 @@ class Item
     private function withinScope()
     {
         return $this->scope->contains(function ($route) {
-            return str_contains(url()->current(), $route);
+            return url()->current() == $route;
         });
     }
 }
