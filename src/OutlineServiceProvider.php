@@ -41,7 +41,7 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         $configPath = __DIR__ . '/../config/outline.php';
 
         $this->publishes(
-            [$configPath => config_path('semaphore.php')],
+            [$configPath => config_path('outline.php')],
             'outline-config'
         );
     }
