@@ -11,9 +11,17 @@
             <ol-text-field
                 class="mt-4"
                 name="name"
-                label="Text Field Input"
+                label="Text Field"
                 placeholder="The placeholder for your field.">
             </ol-text-field>
+
+            <ol-long-text-field
+                class="mt-4"
+                name="long-text"
+                label="Long Text Field"
+                placeholder="Some field value here."
+                hint="Here's a hint for the textarea and all that.">
+            </ol-long-text-field>
         </div>
     </section>
 @endsection

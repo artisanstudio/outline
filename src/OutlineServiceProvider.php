@@ -5,6 +5,7 @@ namespace Artisan\Outline;
 use Spatie\BladeX\Facades\BladeX;
 use Illuminate\Support\Facades\Route;
 use Facades\Artisan\Outline\Outline;
+use Artisan\Outline\Components\Field;
 
 class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -29,10 +30,12 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
     private function registerBladeXComponents()
     {
         BladeX::component('outline::components.text-field')
-            ->viewModel(Components\Field::class)
+            ->viewModel(Field::class)
             ->tag('ol-text-field');
 
-        // BladeX::component('outline::components.textarea')->tag('o-text-field');
+        BladeX::component('outline::components.long-text-field')
+            ->viewModel(Field::class)
+            ->tag('ol-long-text-field');
     }
 
     /**

@@ -1,6 +1,7 @@
 <div class="form-field
-            {{ $error ? '-error' : null }}
-            {{ $class ?? null }}">
+        {{ $hint ?? false ? '-hint' : null }}
+        {{ $error ? '-error' : null }}
+        {{ $class ?? null }}">
 
     <label for="{{ $name }}" class="label">
         {{ $label }}
@@ -11,11 +12,10 @@
     </label>
 
     <div class="control">
-        <input id="{{ $name }}"
+        <textarea id="{{ $name }}"
                class="input"
                type="text"
                name="{{ $name }}"
-               value="{{ $value }}"
                placeholder="{{ $placeholder ?? null }}"
 
                @if($autofocus ?? false)
@@ -25,8 +25,12 @@
                @if($vModel ?? false)
                    v-model="{{ $vModel }}"
                @endif
-        >
+        >{{ $value }}</textarea>
     </div>
+
+    @if($hint ?? false)
+    <p class="hint">{{ $hint }}</p>
+    @endif
 
     @if((! ($silent ?? false)) && $error)
         <p class="message">{!! $error !!}</p>
