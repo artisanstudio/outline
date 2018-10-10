@@ -3,15 +3,12 @@
 namespace Artisan\Outline;
 
 use Illuminate\Support\Facades\Route;
-use Spatie\BladeX\BladeX;
-use Spatie\BladeX\Compiler;
+use Spatie\BladeX\Facades\BladeX;
 use Facades\Artisan\Outline\Outline;
 use Artisan\Outline\Components\Field;
 
 class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    const PREFIX = 'outline';
-
     /**
      * Bootstrap services.
      *
@@ -19,12 +16,6 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function boot()
     {
-        $this->app['blade.compiler']->extend(function ($view) {
-            $compiler = new Compiler($this->app['outline-blade-x']);
-
-            return $compiler->compile($view);
-        });
-
         $this->defineAssetPublishing();
         $this->defineConfigPublishing();
         $this->shareSidebarNavigation();
@@ -38,15 +29,13 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     private function registerBladeXComponents()
     {
-        $this->apr
-            ->make('outline-blade-x')
-            ->component('outline::components.text-field')
+        BladeX::prefix('outline');
+
+        BladeX::component('outline::components.text-field')
             ->viewModel(Field::class)
             ->tag('text-field');
 
-        $this->app
-            ->make('outline-blade-x')
-            ->component('outline::components.long-text-field')
+        BladeX::component('outline::components.long-text-field')
             ->viewModel(Field::class)
             ->tag('long-text-field');
     }
@@ -100,22 +89,6 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->registerResources();
         $this->registerRoutes();
         $this->registerConfig();
-        $this->registerOutlineBladeX();
-    }
-
-    /**
-     * We'll register a new instance of BladeX to prevent having the same
-     * prefix if ever userland uses BladeX as well.
-     *
-     * @return void
-     */
-    private function registerOutlineBladeX()
-    {
-        $this->app->bind('outline-blade-x', function () {
-            return tap(new BladeX, function ($blade) {
-                $blade->prefix(static::PREFIX);
-            });
-        });
     }
 
     /**
