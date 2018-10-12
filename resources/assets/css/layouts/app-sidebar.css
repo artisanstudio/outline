@@ -13,7 +13,21 @@
     }
 }
 
+.current-user {
+    @apply .px-8 .text-center .flex .flex-col .items-center;
+
+    > .avatar {
+        @apply .rounded-full .h-12 .w-12 .mb-1;
+    }
+
+    > .name {
+        @apply .font-bold .text-14;
+    }
+}
+
 .sidebar-navigation {
+    @apply .tracking-tight;
+
     > .links {
         @apply .list-reset;
     }
@@ -23,7 +37,7 @@
     }
 
     > .links > .item.-separator {
-        @apply .px-6 .my-4;
+        @apply .px-6 .my-3;
 
         &:after {
             @apply .block .bg-grey-light .w-full;

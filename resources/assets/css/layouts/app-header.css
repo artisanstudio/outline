@@ -4,50 +4,6 @@
     > .hamburger {
         @apply .mr-4;
     }
-
-    > .user-nav {
-        @apply .ml-auto;
-    }
-}
-
-.user-nav {
-    @apply .relative;
-
-    > .user {
-        @apply .flex .items-center .no-underline .text-black;
-    }
-
-    > .user > .name {
-        @apply .text-14 .tracking-tight .mr-1;
-    }
-
-    > .user > .avatar {
-        @apply .rounded-full .h-8 .mr-2;
-    }
-
-    > .dropdown {
-        @apply .list-reset .absolute .pin-r .text-14 .border .rounded-sm .w-user-nav .shadow-lg .bg-white .z-50;
-
-        top: 100%;
-    }
-
-    > .dropdown > li > a,
-    > .dropdown > li > span {
-        @apply .py-3 .px-5;
-        @apply .no-underline .text-black .block .w-full;
-    }
-
-    > .dropdown > li button {
-        @apply .border-0 .block .w-full .text-left .px-5 .py-3;
-    }
-
-    > .dropdown > li button:hover {
-        @apply .bg-transparent .text-black;
-    }
-
-    > .dropdown > li.separator {
-        @apply .border-b;
-    }
 }
 
 @screen md {

@@ -6,6 +6,4 @@
     <button type="button" class="button" @click.prevent="openGlobalSearch()">
         <i class="icon icon-search"></i>
     </button>
-
-    @include('outline::partials.user-nav')
 </header>
