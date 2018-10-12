@@ -1,6 +1,6 @@
 .app-page {
     > .header > .title {
-        @apply .ms-2xl .tracking-tight;
+        @apply .ms-2xl .tracking-tight .leading-none .mb-1;
     }
 
     > .header > .caption {

@@ -331,7 +331,7 @@ module.exports = {
     |
     */
 
-    borderColors: Object.assign({ default: colors['grey-lighter'] }, colors),
+    borderColors: Object.assign({ default: colors['offwhite'] }, colors),
 
 
     /*

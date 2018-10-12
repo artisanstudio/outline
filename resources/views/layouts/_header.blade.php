@@ -4,7 +4,7 @@
         <span class="placeholder">Search</span>
     </button>
 
-    <button type="button" class="hamburger button" @click.prevent="openSidebar()">
+    <button type="button" class="hamburger button -transparent" :class="{ '-active': sidebar.open }" @click.prevent="openSidebar()">
         <i class="icon icon-menu"></i>
     </button>
 </header>
