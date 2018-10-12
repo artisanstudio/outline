@@ -64,8 +64,10 @@
         }
 
         > .control > .icon {
-            @apply .border .border-grey-lighter .px-4 .bg-grey-light .text-grey-darker .rounded-sm
-                   .text-14 .font-semibold .flex .items-center .justify-center;
+            @apply .border .border-grey-lighter .px-4
+                   .bg-grey-lightest .rounded-sm
+                   .tracking-tight .text-grey-dark .text-14 .roman .font-semibold
+                   .flex .items-center .justify-center;
         }
 
         &.-left {

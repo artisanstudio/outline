@@ -13,6 +13,10 @@
     </label>
 
     <div class="control">
+        @if($iconLeft ?? false)
+            <i class="icon">{{ $iconLeft }}</i>
+        @endif
+
         <input id="{{ $name }}"
                class="input"
                type="text"
