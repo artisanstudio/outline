@@ -58,18 +58,34 @@
         }
     }
 
-    &.-with-icon {
+    &.-icon {
         > .control {
             @apply .flex;
         }
 
         > .control > .icon {
-            @apply .border .border-r-0 .px-3 .text-grey-darker .rounded-l-sm
-                   .flex .items-center .justify-center;
+            @apply .border .border-grey-lighter .px-4 .bg-grey-light .text-grey-darker .rounded-sm
+                   .text-14 .font-semibold .flex .items-center .justify-center;
         }
 
-        > .control > .input {
-            @apply .rounded-l-none;
+        &.-left {
+            > .control > .input {
+                @apply .rounded-l-none;
+            }
+
+            > .control > .icon {
+                @apply .border-r-0 .rounded-r-none;
+            }
+        }
+
+        &.-right {
+            > .control > .input {
+                @apply .rounded-r-none;
+            }
+
+            > .control > .icon {
+                @apply .border-l-0 .rounded-l-none;
+            }
         }
     }
 

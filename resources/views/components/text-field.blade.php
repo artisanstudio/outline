@@ -1,4 +1,6 @@
 <div class="form-field
+            {{ ($iconLeft ?? false) ? '-icon -left' : null }}
+            {{ ($iconRight ?? false) ? '-icon -right' : null }}
             {{ $error ? '-error' : null }}
             {{ $class ?? null }}">
 
@@ -26,6 +28,10 @@
                    v-model="{{ $vModel }}"
                @endif
         >
+
+        @if($iconRight ?? false)
+            <i class="icon">{{ $iconRight }}</i>
+        @endif
     </div>
 
     @if((! ($silent ?? false)) && $error)
