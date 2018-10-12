@@ -1,13 +1,42 @@
-.app-page {
-    > .header > .title {
+.app-page > .header {
+    display: grid;
+
+    > .title {
         @apply .ms-2xl .tracking-tight .leading-none .mb-1;
     }
 
-    > .header > .caption {
+    > .caption {
         @apply .text-grey-darker;
     }
 
-    > .header > .caption > p + p {
+    > .caption > p + p {
         @apply .mt-2;
+    }
+
+    > .call-to-action {
+        @apply .mt-4 .text-14 .font-bold;
+    }
+}
+
+@screen md {
+    .app-page > .header {
+        grid-template-columns: 70% 30%;
+
+        > .title {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        > .caption {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        > .call-to-action {
+            grid-column: 2;
+            grid-row: span 2;
+
+            @apply .mt-0 .self-center;
+        }
     }
 }
