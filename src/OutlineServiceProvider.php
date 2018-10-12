@@ -38,6 +38,9 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         BladeX::component('outline::components.long-text-field')
             ->viewModel(Field::class)
             ->tag('long-text-field');
+
+        BladeX::component('outline::components.page')
+            ->tag('page');
     }
 
     /**
