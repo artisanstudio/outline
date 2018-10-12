@@ -3,7 +3,7 @@
     @apply .py-6 .bg-offwhite .w-sidebar .fixed .pin .z-50;
 
     > .title {
-        @apply .px-8 .text-black .text-19 .mb-8;
+        @apply .px-8 .text-black .text-19 .mb-6;
 
         letter-spacing: -0.011em;
     }
@@ -14,14 +14,30 @@
 }
 
 .current-user {
-    @apply .px-8 .text-center .flex .flex-col .items-center;
+    display: grid;
+    grid-template-columns: 28% 72%;
+    grid-template-rows: 30px 30px;
+
+    @apply .px-8;
 
     > .avatar {
-        @apply .rounded-full .h-12 .w-12 .mb-1;
+        grid-row: span 2;
+
+        @apply .rounded-full .h-10 .self-center;
     }
 
     > .name {
-        @apply .font-bold .text-14;
+        grid-row: 1;
+        grid-column: 2;
+
+        @apply .font-bold .text-14 .flex .self-end;
+    }
+
+    > .greeting {
+        grid-row: 2;
+        grid-column: 2;
+
+        @apply .text-12 .text-grey-darker;
     }
 }
 
