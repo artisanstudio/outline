@@ -3,9 +3,7 @@
     @apply .py-6 .bg-offwhite .w-sidebar .fixed .pin .z-50;
 
     > .title {
-        @apply .px-8 .text-black .text-19 .mb-6;
-
-        letter-spacing: -0.011em;
+        @apply .px-8 .text-black .ms-base .mb-6 .tracking-tight;
     }
 
     > .navigation {
