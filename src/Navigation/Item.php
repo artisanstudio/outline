@@ -11,7 +11,14 @@ class Item
      *
      * @var string
      */
-    const ACTIVE = '-active';
+    const Active = '-active';
+
+    /**
+     * Separator special name.
+     *
+     * @var string
+     */
+    const Separator = '-separator';
 
     /**
      * The routes to look up to see if the item is active.
@@ -37,6 +44,16 @@ class Item
     {
         $this->name  = $name;
         $this->scope = new Collection;
+    }
+
+    /**
+     * Create a new separator item.
+     *
+     * @return Item
+     */
+    public static function separator()
+    {
+        return new Item(static::Separator);
     }
 
     /**
@@ -107,7 +124,7 @@ class Item
             return null;
         }
 
-        return static::ACTIVE;
+        return static::Active;
     }
 
     /**
@@ -120,5 +137,15 @@ class Item
         return $this->scope->contains(function ($route) {
             return url()->current() == $route;
         });
+    }
+
+    /**
+     * Check if the item is a separator.
+     *
+     * @return boolean
+     */
+    public function isSeparator()
+    {
+        return $this->name === static::Separator;
     }
 }

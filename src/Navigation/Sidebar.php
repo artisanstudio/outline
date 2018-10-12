@@ -33,4 +33,14 @@ class Sidebar
             $this->items[] = $item;
         });
     }
+
+    /**
+     * Add a separator.
+     *
+     * @return void
+     */
+    public function separator()
+    {
+        $this->items[] = Item::separator();
+    }
 }

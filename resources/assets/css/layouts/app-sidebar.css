@@ -19,7 +19,22 @@
     }
 
     > .links > .item {
-        @apply .px-6 .mb-4;
+        @apply .px-6 .mb-5;
+    }
+
+    > .links > .item.-separator {
+        @apply .px-6 .my-8;
+
+        &:after {
+            @apply .block .bg-grey-light .w-full;
+
+            content: '';
+            height: 1px;
+        }
+    }
+
+    > .links > .item.-active > .link {
+        @apply .text-primary;
     }
 
     > .links > .item > .link {
@@ -27,7 +42,7 @@
     }
 
     > .links > .item > .link > .icon {
-        @apply .mr-5 .text-grey-darker;
+        @apply .mr-5 .opacity-50;
     }
 
     > .links > .item > .link:hover {
