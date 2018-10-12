@@ -3,7 +3,7 @@
     @apply .py-6 .bg-offwhite .w-sidebar .fixed .pin .z-50;
 
     > .title {
-        @apply .px-6 .text-black .text-19 .mb-8;
+        @apply .px-8 .text-black .text-19 .mb-8;
 
         letter-spacing: -0.011em;
     }
@@ -19,11 +19,11 @@
     }
 
     > .links > .item {
-        @apply .px-6 .mb-5;
+        @apply .px-8 .mb-2 .py-2;
     }
 
     > .links > .item.-separator {
-        @apply .px-6 .my-8;
+        @apply .px-6 .my-4;
 
         &:after {
             @apply .block .bg-grey-light .w-full;
@@ -33,8 +33,12 @@
         }
     }
 
-    > .links > .item.-active > .link {
-        @apply .text-primary;
+    > .links > .item.-active {
+        @apply .bg-grey-lighter .border-l-4 .border-blue;
+
+        > .link {
+            @apply .-ml-4px;
+        }
     }
 
     > .links > .item > .link {

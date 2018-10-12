@@ -609,6 +609,7 @@ module.exports = {
 
     negativeMargin: {
         '2px': '2px',
+        '4px': '4px',
         'px':  '1px',
         '0':   '0',
         '1':   '0.25rem',
