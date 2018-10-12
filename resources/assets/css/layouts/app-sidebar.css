@@ -1,9 +1,9 @@
 .app-sidebar {
     @apply .flex-no-shrink .flex-no-grow;
-    @apply .bg-primary .w-sidebar .p-8 .fixed .pin .z-50;
+    @apply .py-6 .bg-offwhite .w-sidebar .fixed .pin .z-50;
 
     > .title {
-        @apply .text-white .ms-lg .px-4 .mb-8;
+        @apply .px-6 .text-black .text-19 .mb-8;
 
         letter-spacing: -0.011em;
     }
@@ -19,30 +19,24 @@
     }
 
     > .links > .item {
-        @apply .mb-2;
+        @apply .px-6 .mb-4;
     }
 
-    > .links > .item > .button {
-        --button-text: config('colors.white');
+    > .links > .item > .link {
+        @apply .flex .items-center .text-black .font-semibold;
     }
 
-    > .links > .item > .button:hover {
-        --button-bg:     config('colors.white');
-        --button-border: config('colors.white');
-        --button-text:   config('colors.primary');
+    > .links > .item > .link > .icon {
+        @apply .mr-5 .text-grey-darker;
     }
 
-    > .links > .item.-active > .button {
-        --button-bg:     config('colors.white');
-        --button-border: config('colors.white');
-        --button-text:   config('colors.primary');
-
-        @apply .font-bold .shadow-md;
+    > .links > .item > .link:hover {
+        @apply .text-primary;
     }
 }
 
 @screen md {
     .app-sidebar {
-        @apply .block .px-6 .static;
+        @apply .block .static;
     }
 }

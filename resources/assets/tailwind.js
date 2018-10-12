@@ -54,7 +54,7 @@ let colors = {
     'grey-lighter':  '#f1f1f1',
     'grey-lightest': '#f7f7f7',
     'white':         '#ffffff',
-    'offwhite':      '#f7f7f7',
+    'offwhite':      '#f8f8f8',
 
     'blue':          '#1e8cf9',
     'yellow':        '#fcd603',
@@ -188,6 +188,7 @@ module.exports = {
 
     textSizes: {
         '14': '14px',
+        '19': '19px',
     },
 
 

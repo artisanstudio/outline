@@ -5,7 +5,7 @@
         <ul class="links">
             @foreach($sidebar->items() as $item)
             <li class="item {{ $item->active() }}">
-                <a href="{{ $item->link }}" class="button justify-start -transparent -with-icon">
+                <a class="link" href="{{ $item->link }}">
                     <i class="icon {{ $item->icon }}"></i>
 
                     {{ $item->name }}

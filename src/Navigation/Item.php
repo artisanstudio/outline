@@ -21,9 +21,16 @@ class Item
     protected $scope;
 
     /**
+     * Route to link to.
+     *
+     * @param string
+     */
+    public $link = null;
+
+    /**
      * Create a new navigation item instance.
      *
-     * @param  array  $attributes
+     * @param  string  $name
      * @return Item
      */
     public function __construct($name)
