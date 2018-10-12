@@ -18,7 +18,7 @@
     }
 }
 
-@screen md {
+@screen sm {
     .app-page > .header {
         grid-template-columns: 70% 30%;
 
