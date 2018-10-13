@@ -2,7 +2,7 @@
     display: grid;
 
     > .title {
-        @apply .ms-2xl .tracking-tight .leading-none .mb-1;
+        @apply .ms-2xl .tracking-tight;
     }
 
     > .caption {
@@ -20,7 +20,7 @@
 
 @screen sm {
     .app-page > .header {
-        grid-template-columns: 70% 30%;
+        grid-template-columns: auto auto;
 
         > .title {
             grid-column: 1;
@@ -35,8 +35,10 @@
         > .call-to-action {
             grid-column: 2;
             grid-row: span 2;
+            width: 100%;
+            max-width: 200px;
 
-            @apply .mt-0 .self-center;
+            @apply .mt-0 .self-center .ml-auto .w-full;
         }
     }
 }

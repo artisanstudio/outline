@@ -4,5 +4,11 @@
         <div class="caption">
             {{ $caption }}
         </div>
+
+        @if($cta ?? false)
+            {{ $cta }}
+        @endif
     </header>
+
+    {{ $slot }}
 </section>
