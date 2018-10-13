@@ -20,6 +20,7 @@ import Vue from 'vue'
 import store from './vuex/store'
 import Sidebar from './mixins/Sidebar.js'
 import Search from './mixins/Search.js'
+import Alert from './mixins/Alert.js'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -51,11 +52,5 @@ const app = new Vue({
 
     store,
 
-    mixins: [ Sidebar, Search ],
-
-    methods: {
-        closeAlert() {
-            this.$refs.alert.remove()
-        },
-    },
+    mixins: [ Sidebar, Search, Alert ],
 })

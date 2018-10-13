@@ -29,8 +29,8 @@
                 @include('outline::layouts._header')
 
                 @if($message = session('_message'))
-                    <outline-alert-message :type="$message['type']">
-                        {{ $message['content'] }}
+                    <outline-alert-message :type="$message->type">
+                        {{ $message->content }}
                     </outline-alert-message>
                 @endif
 
