@@ -1,4 +1,8 @@
 import Vue from 'vue'
+import VueNotification from 'vue-notification'
+import velocity from 'velocity-animate'
+
+// Vue.config.devtools = true
 
 /**
  * The bootstrap.js file isn't bundled up with this file so userland
@@ -8,6 +12,7 @@ import Vue from 'vue'
  * I still have no other idea how to implement something better.
  */
 // import axios from 'axios'
+Vue.use(VueNotification, { velocity })
 
 /**
  * Let's create our state handler for Vue. Another problem is if
@@ -53,4 +58,20 @@ const app = new Vue({
     store,
 
     mixins: [ Sidebar, Search, Alert ],
+
+    computed: {
+        notification() {
+            return window.Admin.notification
+        },
+    },
+
+    mounted() {
+        if (this.notification) {
+            this.$notify({
+                type:  this.notification.type,
+                title: this.notification.title,
+                text:  this.notification.content,
+            })
+        }
+    },
 })

@@ -1,5 +1,5 @@
 .app-content {
-    @apply .p-6 .pb-16 .rounded-tl-sm .bg-white;
+    @apply .p-6 .pb-16 .rounded-tl-sm;
     @apply .flex-grow;
 }
 

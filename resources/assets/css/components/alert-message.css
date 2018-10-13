@@ -1,24 +1,36 @@
 .alert-message {
-    @apply .text-14 .font-medium .px-6 .flex .items-center
-           .bg-grey-light .border-b .border-grey;
+    @apply .text-14 .py-3 .px-5 .shadow-xl .bg-white
+           .border-l-4 .border-blue;
 
-    &.-success {
-        background-color: #cfffe9;
-        border-color: #94ffd4;
-        color: #005f39;
+    @apply .mb-6 .mr-6;
+
+    > .notification-title {
+        @apply .tracking-tight .font-bold .text-grey-darkest;
     }
 
-    > .close {
-        @apply .ml-auto .py-4 .px-2;
+    > .notification-content {
+        @apply .text-grey-darker .italic;
     }
 
-    > .close:focus {
-        outline: none;
+    > .notification-content strong {
+        @apply .font-semibold;
+    }
+
+    &.warn {
+        @apply .border-yellow;
+    }
+
+    &.error {
+        @apply .border-red;
+    }
+
+    &.success {
+        @apply .border-green;
     }
 }
 
 @screen md {
     .alert-message {
-        @apply .px-8;
+        @apply .mb-8 .mr-8;
     }
 }

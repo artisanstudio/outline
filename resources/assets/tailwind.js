@@ -57,8 +57,9 @@ let colors = {
     'offwhite':      '#f8f8f8',
 
     'blue':          '#1e8cf9',
-    'green':         '#03fc0d',
-    'red':           '#fc0303',
+    'green':         '#67cc86',
+    'red':           '#e44c42',
+    'yellow':        '#feb748',
 
     'orange':        '#ff8100',
     'orange-light':  '#fff0d1',

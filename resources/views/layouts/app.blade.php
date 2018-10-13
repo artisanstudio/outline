@@ -14,6 +14,12 @@
         <link href="/vendor/outline/css/app.css" rel="stylesheet">
 
         @stack('head')
+
+        <script>
+            window.Admin = {!! json_encode([
+                'notification' => flash()->get(),
+            ]) !!}
+        </script>
     </head>
 
     <body>
@@ -28,12 +34,6 @@
             <section class="app-main">
                 @include('outline::layouts._header')
 
-                @if($message = session('_message'))
-                    <outline-alert-message :type="$message->type">
-                        {{ $message->content }}
-                    </outline-alert-message>
-                @endif
-
                 <main class="app-content">
                     @yield('content')
                 </main>
@@ -46,6 +46,10 @@
                     api="/{{ config('outline.prefix') }}/search">
                 </search-overlay>
             </transition>
+
+            <notifications
+                classes="alert-message" width="375"
+                position="bottom right" animation-type="velocity" />
         </section>
 
         <script type="text/javascript" src="/vendor/outline/js/manifest.js"></script>
