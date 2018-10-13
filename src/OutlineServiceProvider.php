@@ -19,7 +19,9 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->defineAssetPublishing();
         $this->defineConfigPublishing();
         $this->shareSidebarNavigation();
-        $this->registerBladeXComponents();
+
+        $this->registerComponents();
+        $this->registerLayouts();
     }
 
     /**
@@ -27,7 +29,7 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
      *
      * @return void
      */
-    private function registerBladeXComponents()
+    private function registerComponents()
     {
         BladeX::prefix('outline');
 
@@ -35,10 +37,23 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
             ->viewModel(Field::class)
             ->tag('text-field');
 
+        BladeX::component('outline::components.password-field')
+            ->viewModel(Field::class)
+            ->tag('password-field');
+
         BladeX::component('outline::components.long-text-field')
             ->viewModel(Field::class)
             ->tag('long-text-field');
 
+    }
+
+    /**
+     * Register blade-x layouts and stuff.
+     *
+     * @return void
+     */
+    public function registerLayouts()
+    {
         BladeX::component('outline::components.page')
             ->tag('page');
     }
