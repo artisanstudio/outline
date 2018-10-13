@@ -2,7 +2,7 @@
     @apply .relative;
 
     > .label {
-        @apply .block .font-semibold .mb-1 .text-14;
+        @apply .block .font-semibold .mb-1 .text-14 .text-grey-darkest;
     }
 
     > .label > .optional {
@@ -75,7 +75,7 @@
                 @apply .rounded-l-none;
             }
 
-            > .control > .icon {
+            > .control > .icon.-left {
                 @apply .border-r-0 .rounded-r-none;
             }
         }
@@ -85,7 +85,7 @@
                 @apply .rounded-r-none;
             }
 
-            > .control > .icon {
+            > .control > .icon.-right {
                 @apply .border-l-0 .rounded-l-none;
             }
         }

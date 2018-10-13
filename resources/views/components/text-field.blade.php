@@ -14,7 +14,7 @@
 
     <div class="control">
         @if($iconLeft ?? false)
-            <i class="icon">{{ $iconLeft }}</i>
+            <i class="icon -left">{{ $iconLeft }}</i>
         @endif
 
         <input id="{{ $name }}"
@@ -34,7 +34,7 @@
         >
 
         @if($iconRight ?? false)
-            <i class="icon">{{ $iconRight }}</i>
+            <i class="icon -right">{{ $iconRight }}</i>
         @endif
     </div>
 
