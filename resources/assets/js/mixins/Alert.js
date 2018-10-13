@@ -1,6 +1,6 @@
 export default {
     data: {
-        alert: { open: false }
+        alert: { open: true }
     },
 
     methods: {

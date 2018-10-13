@@ -41,7 +41,7 @@
 
             <transition name="fade">
                 <search-overlay
-                    v-if="isSearching"
+                    v-if="search.open"
                     @close="closeGlobalSearch()"
                     api="/{{ config('outline.prefix') }}/search">
                 </search-overlay>
