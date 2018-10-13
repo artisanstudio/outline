@@ -35,65 +35,66 @@
     > .hint {
         @apply .text-14 .px-4 .py-3 .bg-grey-lighter .text-grey-darkest .italic .leading-none .rounded-b-sm;
     }
+}
 
-    &.-error {
+.form-field.-icon {
+    > .control {
+        @apply .flex;
+    }
+
+    > .control > .icon {
+        @apply .border .border-grey-lighter .px-4
+               .bg-grey-lightest .rounded-sm
+               .tracking-tight .text-grey-dark .text-14 .roman .font-semibold
+               .flex .items-center .justify-center;
+    }
+
+    &.-left {
         > .control > .input {
-            border-color: #FFB263;
-            background-color: #FFF0D1;
+            @apply .rounded-l-none;
         }
 
-        > .message {
-            color: #FFB263;
+        > .control > .icon.-left {
+            @apply .border-r-0 .rounded-r-none;
         }
     }
 
-    &.-success {
+    &.-right {
         > .control > .input {
-            border-color: var(--green);
-            background-color: #D4FFD1;
+            @apply .rounded-r-none;
         }
 
-        > .message {
-            color: var(--green);
+        > .control > .icon.-right {
+            @apply .border-l-0 .rounded-l-none;
         }
     }
+}
 
-    &.-icon {
-        > .control {
-            @apply .flex;
-        }
-
-        > .control > .icon {
-            @apply .border .border-grey-lighter .px-4
-                   .bg-grey-lightest .rounded-sm
-                   .tracking-tight .text-grey-dark .text-14 .roman .font-semibold
-                   .flex .items-center .justify-center;
-        }
-
-        &.-left {
-            > .control > .input {
-                @apply .rounded-l-none;
-            }
-
-            > .control > .icon.-left {
-                @apply .border-r-0 .rounded-r-none;
-            }
-        }
-
-        &.-right {
-            > .control > .input {
-                @apply .rounded-r-none;
-            }
-
-            > .control > .icon.-right {
-                @apply .border-l-0 .rounded-l-none;
-            }
-        }
+.form-field.-error {
+    > .control > .input {
+        border-color: config('colors.orange');
+        background-color: config('colors.orange-light');
     }
 
-    &.-hint {
-        > .control > .input {
-            @apply .rounded-b-none;
-        }
+    > .message {
+        color: config('colors.orange');
+    }
+}
+
+
+.form-field.-success {
+    > .control > .input {
+        border-color: var(--green);
+        background-color: #D4FFD1;
+    }
+
+    > .message {
+        color: var(--green);
+    }
+}
+
+.form-field.-hint {
+    > .control > .input {
+        @apply .rounded-b-none;
     }
 }

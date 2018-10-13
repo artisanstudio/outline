@@ -57,9 +57,11 @@ let colors = {
     'offwhite':      '#f8f8f8',
 
     'blue':          '#1e8cf9',
-    'yellow':        '#fcd603',
     'green':         '#03fc0d',
     'red':           '#fc0303',
+
+    'orange':        '#ff8100',
+    'orange-light':  '#fff0d1',
 
     'artisan':       '#ff1d8d',
     'primary':       'var(--primary)',
@@ -642,7 +644,7 @@ module.exports = {
         default: '0 2px 4px 0 rgba(0,0,0,0.10)',
         'md':    '0 4px 8px 0 rgba(0,0,0,0.05), 0 2px 4px 0 rgba(0,0,0,0.05)',
         'lg':    '0 15px 30px 0 rgba(0,0,0,0.025), 0 5px 15px 0 rgba(0,0,0,0.025)',
-        'xl':    '0 15px 50px 0 rgba(0,0,0,0.075), 0 5px 15px 0 rgba(0,0,0,0.025)', //  
+        'xl':    '0 15px 50px 0 rgba(0,0,0,0.075), 0 5px 15px 0 rgba(0,0,0,0.025)', //
         'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
         'none':  'none',
     },
