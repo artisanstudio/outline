@@ -28,6 +28,12 @@
             <section class="app-main">
                 @include('outline::layouts._header')
 
+                @if($message = session('_message'))
+                    <outline-alert-message :type="$message['type']">
+                        {{ $message['content'] }}
+                    </outline-alert-message>
+                @endif
+
                 <main class="app-content">
                     @yield('content')
                 </main>

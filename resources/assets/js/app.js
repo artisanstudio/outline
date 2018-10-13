@@ -52,4 +52,10 @@ const app = new Vue({
     store,
 
     mixins: [ Sidebar, Search ],
+
+    methods: {
+        closeAlert() {
+            this.$refs.alert.remove()
+        },
+    },
 })

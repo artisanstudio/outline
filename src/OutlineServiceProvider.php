@@ -33,6 +33,9 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         BladeX::prefix('outline');
 
+        BladeX::component('outline::components.alert-message')
+            ->tag('alert-message');
+
         BladeX::component('outline::components.text-field')
             ->viewModel(Field::class)
             ->tag('text-field');
@@ -44,7 +47,6 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         BladeX::component('outline::components.long-text-field')
             ->viewModel(Field::class)
             ->tag('long-text-field');
-
     }
 
     /**

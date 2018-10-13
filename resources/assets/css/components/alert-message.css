@@ -1,0 +1,24 @@
+.alert-message {
+    @apply .text-14 .font-medium .px-6 .flex .items-center
+           .bg-grey-light .border-b .border-grey;
+
+    &.-success {
+        background-color: #cfffe9;
+        border-color: #94ffd4;
+        color: #005f39;
+    }
+
+    > .close {
+        @apply .ml-auto .py-4 .px-2;
+    }
+
+    > .close:focus {
+        outline: none;
+    }
+}
+
+@screen md {
+    .alert-message {
+        @apply .px-8;
+    }
+}
