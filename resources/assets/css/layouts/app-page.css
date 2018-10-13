@@ -1,8 +1,11 @@
 .app-page > .header {
     display: grid;
+    grid-column-gap: 24px;
 
     > .title {
-        @apply .ms-2xl .tracking-tight;
+        @apply .ms-2xl;
+
+        letter-spacing: -0.03em;
     }
 
     > .caption {
@@ -14,7 +17,7 @@
     }
 
     > .call-to-action {
-        @apply .mt-4 .text-14 .font-bold;
+        @apply .mt-4;
     }
 }
 
