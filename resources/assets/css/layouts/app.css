@@ -16,7 +16,7 @@
     transform: translateX(-100%);
 
     &.-open {
-        @apply .shadow-lg;
+        @apply .shadow-xl;
         transform: translateX(0);
     }
 }

@@ -7,7 +7,7 @@
 
     > .hamburger.-active {
         --button-text: config('colors.black');
-        --button-bg: config('colors.grey-light');
+        --button-bg: config('colors.grey-lightest');
     }
 
     > .hamburger:focus {
@@ -16,7 +16,7 @@
 
     > .hamburger:hover {
         --button-text: config('colors.black');
-        --button-bg: config('colors.grey-light');
+        --button-bg: config('colors.grey-lightest');
     }
 }
 
