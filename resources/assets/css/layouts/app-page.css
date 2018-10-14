@@ -1,3 +1,7 @@
+.app-page {
+    @apply .p-6;
+}
+
 .app-page > .header {
     display: grid;
     grid-column-gap: 24px;
@@ -47,6 +51,10 @@
 }
 
 @screen md {
+    .app-page {
+        @apply .p-8;
+    }
+
     .app-page > .header {
         > .caption {
             @apply .max-w-sm;

@@ -49,17 +49,17 @@ let colors = {
     'grey-darkest':  '#3d4852',
     'grey-darker':   '#626a6d',
     'grey-dark':     '#9a9a9a',
-    'grey':          '#aaaeb1',
-    'grey-light':    '#efefef',
+    'grey':          '#cad0de',
+    'grey-light':    '#e8ebf1',
     'grey-lighter':  '#f1f1f1',
-    'grey-lightest': '#f7f7f7',
+    'grey-lightest': '#f6f7fa',
     'white':         '#ffffff',
     'offwhite':      '#f8f8f8',
 
     'blue':          '#1e8cf9',
-    'green':         '#67cc86',
-    'red':           '#e44c42',
-    'yellow':        '#feb748',
+    'green':         '#6ddc98',
+    'red':           '#f06276',
+    'yellow':        '#f4c769',
 
     'orange':        '#ff8100',
     'orange-light':  '#fff0d1',
@@ -334,7 +334,7 @@ module.exports = {
     |
     */
 
-    borderColors: Object.assign({ default: colors['offwhite'] }, colors),
+    borderColors: Object.assign({ default: colors['grey-light'] }, colors),
 
 
     /*

@@ -1,10 +1,4 @@
 .app-content {
-    @apply .p-6 .pb-16 .rounded-tl-sm;
+    @apply .rounded-tl-sm;
     @apply .flex-grow;
-}
-
-@screen md {
-    .app-content {
-        @apply .p-8;
-    }
 }
