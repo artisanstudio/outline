@@ -45,3 +45,11 @@
         }
     }
 }
+
+@screen md {
+    .app-page > .header {
+        > .caption {
+            @apply .max-w-sm;
+        }
+    }
+}
