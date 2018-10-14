@@ -30,11 +30,11 @@ export default {
 
     methods: {
         openGlobalSearch() {
-            this.isSearching = true
+            this.search.open = true
         },
 
         closeGlobalSearch() {
-            this.isSearching = false
+            this.search.open = false
         },
     },
 }
