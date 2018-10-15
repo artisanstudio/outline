@@ -1,7 +1,7 @@
 .publish-form {
     @apply .mt-6 .flex .flex-col-reverse .w-full;
 
-    > .content, > .sidebar {
+    > .sidebar {
         @apply .panel .self-start;
     }
 }
