@@ -9,7 +9,7 @@
     > .title {
         @apply .ms-2xl;
 
-        letter-spacing: -0.03em;
+        letter-spacing: -0.05em;
     }
 
     > .caption {
@@ -20,7 +20,7 @@
         @apply .mt-2;
     }
 
-    > .call-to-action {
+    > .actions {
         @apply .mt-4;
     }
 }
@@ -39,20 +39,18 @@
             grid-row: 2;
         }
 
-        > .call-to-action {
+        > .actions {
             grid-column: 2;
             grid-row: span 2;
-            width: 100%;
-            max-width: 200px;
 
-            @apply .mt-0 .self-center .ml-auto .w-full;
+            @apply .mt-0 .self-center .ml-auto;
         }
     }
 }
 
 @screen md {
     .app-page {
-        @apply .p-8;
+        @apply .p-8 .pt-6;
     }
 
     .app-page > .header {

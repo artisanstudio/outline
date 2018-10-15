@@ -55,7 +55,7 @@
     }
 
     &.-small {
-        @apply .text-14 .font-semibold;
+        @apply .font-medium .tracking-tight;
     }
 
     &.-with-icon {

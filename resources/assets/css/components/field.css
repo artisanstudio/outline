@@ -2,7 +2,7 @@
     @apply .relative;
 
     > .label {
-        @apply .block .font-semibold .mb-1 .text-14 .text-grey-darkest;
+        @apply .block .font-semibold .text-grey-darkest;
     }
 
     > .label > .optional {
@@ -10,7 +10,7 @@
     }
 
     > .control > .input {
-        @apply .border .bg-white .rounded-sm .w-full .py-3 .px-4 .block .tracking-tight;
+        @apply .border .bg-white .rounded-sm .w-full .p-3 .block .tracking-tight .text-14;
 
         outline: none;
         resize:  none;

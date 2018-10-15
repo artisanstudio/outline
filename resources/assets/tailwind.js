@@ -56,7 +56,7 @@ let colors = {
     'white':         '#ffffff',
     'offwhite':      '#f8f8f8',
 
-    'blue':          '#1e8cf9',
+    'blue':          '#0a69f8',
     'green':         '#6ddc98',
     'red':           '#f06276',
     'yellow':        '#f4c769',
@@ -814,7 +814,7 @@ module.exports = {
 
     plugins: [
         require('tailwindcss-modularscale')({
-            base:     16,
+            base:     14,
             ratio:    1.333, // Perfect Fourth
             variants: ['responsive'],
         }),

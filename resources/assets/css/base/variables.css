@@ -1,5 +1,5 @@
 :root {
-    --primary: #0071e0;
+    --primary: config('colors.blue');
     --chart-fill: var(--primary);
     --chart-stroke: var(--primary);
 }
