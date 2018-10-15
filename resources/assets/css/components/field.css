@@ -2,7 +2,7 @@
     @apply .relative;
 
     > .label {
-        @apply .block .font-semibold .text-grey-darkest;
+        @apply .mb-1 .block .font-semibold .text-grey-darkest;
     }
 
     > .label > .optional {
@@ -10,7 +10,7 @@
     }
 
     > .control > .input {
-        @apply .border .bg-white .rounded-sm .w-full .p-3 .block .tracking-tight .text-14;
+        @apply .border .bg-white .rounded-sm .w-full .p-3 .block .tracking-tight;
 
         outline: none;
         resize:  none;
@@ -29,11 +29,11 @@
     }
 
     > .message {
-        @apply .italic .m-0 .mt-2 .text-14 .leading-tight;
+        @apply .italic .m-0 .mt-2 .leading-tight;
     }
 
     > .hint {
-        @apply .text-14 .px-4 .py-3 .bg-grey-lighter .text-grey-darkest .italic .leading-none .rounded-b-sm;
+        @apply .px-4 .py-3 .bg-grey-lighter .text-grey-darkest .italic .leading-none .rounded-b-sm;
     }
 }
 
@@ -45,7 +45,7 @@
     > .control > .icon {
         @apply .border .px-4
                .bg-grey-lightest .rounded-sm
-               .tracking-tight .text-grey-dark .text-14 .roman .font-semibold
+               .tracking-tight .text-grey-dark .roman .font-semibold
                .flex .items-center .justify-center;
     }
 

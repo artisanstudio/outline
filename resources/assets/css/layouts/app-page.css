@@ -1,5 +1,5 @@
 .app-page {
-    @apply .p-6;
+    @apply .p-6 .pb-16;
 }
 
 .app-page > .header {
@@ -50,7 +50,7 @@
 
 @screen md {
     .app-page {
-        @apply .p-8 .pt-6;
+        @apply .p-8 .pt-6 .pb-16;
     }
 
     .app-page > .header {

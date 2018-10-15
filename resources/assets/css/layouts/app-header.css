@@ -22,13 +22,13 @@
 
 .global-search {
     @apply .bg-grey-lightest .rounded-full .py-2 .px-4
-           .text-14 .tracking-tight .text-left .text-grey-darker
+           .tracking-tight .text-left .text-grey-darker
            .flex .items-center;
 
     width: 250px;
 
     > .icon {
-        @apply .mr-1 .text-14 .text-grey-dark;
+        @apply .mr-1 .text-grey-dark;
     }
 
     &:focus {

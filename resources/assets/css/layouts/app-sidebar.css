@@ -1,13 +1,13 @@
 .app-sidebar {
-    @apply .flex-no-shrink .flex-no-grow;
-    @apply .py-6 .bg-offwhite .w-sidebar .fixed .pin .z-50;
+    @apply .flex-no-shrink .flex-no-grow
+           .py-6 .bg-offwhite .w-sidebar .fixed .pin .z-50;
 
     > .title {
-        @apply .px-8 .text-black .ms-base .mb-6 .tracking-tight;
+        @apply .ms-lg .px-8 .text-black .mb-6 .tracking-tight;
     }
 
     > .navigation {
-        @apply .text-14 .text-white;
+        @apply .text-white;
     }
 }
 
@@ -28,7 +28,7 @@
         grid-row: 1;
         grid-column: 2;
 
-        @apply .font-bold .text-14 .flex .self-end;
+        @apply .font-bold .flex .self-end;
     }
 
     > .greeting {
