@@ -1,5 +1,5 @@
 html, body {
-    @apply .leading-normal .tracking-normal .font-sans .font-normal .ms-base .bg-white .text-black;
+    @apply .leading-normal .tracking-normal .font-sans .font-normal .ms-base .text-black;
 }
 
 h1, h2, h3, h4, h5, h6, .ms-lg {

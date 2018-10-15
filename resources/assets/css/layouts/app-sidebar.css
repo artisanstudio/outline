@@ -1,6 +1,5 @@
 .app-sidebar {
-    @apply .flex-no-shrink .flex-no-grow
-           .py-6 .bg-offwhite .w-sidebar .fixed .pin .z-50;
+    @apply .bg-offwhite .flex-no-shrink .flex-no-grow .py-6 .w-sidebar .fixed .pin .z-50;
 
     > .title {
         @apply .ms-lg .px-8 .text-black .mb-6 .tracking-tight;
@@ -34,8 +33,9 @@
     > .greeting {
         grid-row: 2;
         grid-column: 2;
+        font-size: 12px;
 
-        @apply .text-12 .text-grey-darker;
+        @apply .text-grey-darker;
     }
 }
 

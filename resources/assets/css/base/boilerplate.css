@@ -7,6 +7,10 @@ html, body, .app-wrapper, .app-sidebar {
     min-height: 100vh;
 }
 
+body {
+    @apply .bg-offwhite;
+}
+
 .fade-enter-active, .fade-leave-active {
     transition: opacity .25s ease-out;
 }
@@ -21,20 +25,4 @@ html, body, .app-wrapper, .app-sidebar {
 
 .table tr:last-of-type td {
     @apply .border-b-0;
-}
-
-.money {
-    @apply .inline-flex .font-bold;
-}
-
-.money:before {
-    @apply .font-normal;
-
-    content: '₱';
-    margin-right: 1px;
-}
-
-.money:after {
-    content: '.00';
-    font-size: 0.8em;
 }

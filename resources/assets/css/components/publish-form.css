@@ -1,17 +1,8 @@
 .publish-form {
     @apply .mt-6 .flex .flex-col-reverse .w-full;
 
-    > .content,
-    > .sidebar {
-        @apply .w-full .mb-8 .border .px-6 .py-5 .pb-8
-               .rounded-sm .self-start .border-grey-lighter;
-
-        box-shadow: 0 10px 10px 0 rgba(0,0,0,0.01),
-                    0 10px 10px 0 rgba(0,0,0,0.01);
-
-        @apply .shadow;
-
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.035);
+    > .content, > .sidebar {
+        @apply .panel .self-start;
     }
 }
 

@@ -1,5 +1,5 @@
 .app-header {
-    @apply .py-4 .px-6 .flex .items-center .border-b;
+    @apply .py-4 .px-6 .flex .items-center;
 
     > .hamburger {
         @apply .ml-auto;
@@ -21,10 +21,11 @@
 }
 
 .global-search {
-    @apply .bg-grey-lightest .rounded-full .py-2 .px-4
+    @apply .bg-white .rounded-full .py-2 .px-4
            .tracking-tight .text-left .text-grey-darker
            .flex .items-center;
 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.035);
     width: 250px;
 
     > .icon {
