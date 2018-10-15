@@ -16,6 +16,7 @@
 @import "components/pagination";
 @import "components/alert-message";
 @import "components/search-overlay";
+@import "components/publish-form";
 
 @import "layouts/app";
 @import "layouts/app-wrapper";
