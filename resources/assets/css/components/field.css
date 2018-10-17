@@ -16,6 +16,33 @@
         resize:  none;
     }
 
+    > .control > .tag-input {
+        @apply .border .bg-white .rounded-sm .border-grey-light .px-3 .py-2;
+
+        min-height: 39px;
+
+        -webkit-appearance: unset;
+
+        > .input-tag, > input {
+            @apply .m-0 .p-0;
+        }
+
+        > input {
+            @apply .ms-base;
+        }
+
+        > .input-tag {
+            @apply .px-2 .py-0 .mr-2 .border-0 .bg-blue .text-white .font-medium .mb-1;
+
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        > .input-tag > .remove {
+            @apply .hidden;
+        }
+    }
+
     > .control > .input[readonly] {
         @apply .bg-grey-light;
     }

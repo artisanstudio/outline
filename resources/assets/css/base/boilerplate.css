@@ -19,6 +19,11 @@ body {
     opacity: 0;
 }
 
+table {
+    margin: 0;
+    padding: 0;
+}
+
 .table td, .table th {
     @apply .py-2 .border-b;
 }
