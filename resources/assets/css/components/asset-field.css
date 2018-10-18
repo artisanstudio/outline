@@ -1,0 +1,21 @@
+.asset-field {
+    > .label {
+        @apply .mb-1 .block .font-semibold .text-grey-darkest;
+    }
+
+    > .preview {
+        @apply .h-64 .w-full .relative;
+    }
+
+    > .preview > .image {
+        @apply .block .rounded .bg-grey-light .h-full .w-full .border-0;
+    }
+
+    > .preview > .overlay {
+        @apply .absolute .pin .h-full .w-full
+               .ms-lg .tracking-tight .font-bold .text-grey-darkest;
+
+        background: rgba(255, 255, 255, 0.5);
+        outline: none;
+    }
+}
