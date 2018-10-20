@@ -1,14 +1,24 @@
 .asset-field {
+    &.-empty {
+        > .preview {
+            @apply .h-64;
+        }
+
+        > .preview > .image {
+            @apply .bg-grey-light;
+        }
+    }
+
     > .label {
         @apply .mb-1 .block .font-semibold .text-grey-darkest;
     }
 
     > .preview {
-        @apply .h-64 .w-full .relative;
+        @apply .w-full .relative;
     }
 
     > .preview > .image {
-        @apply .block .rounded .bg-grey-light .h-full .w-full .border-0;
+        @apply .block .rounded .h-full .w-full .border-0;
     }
 
     > .preview > .overlay {
