@@ -51,10 +51,10 @@
     }
 
     > .links > .item.-separator {
-        @apply .px-6 .my-3;
+        @apply .px-6 .my-2;
 
         &:after {
-            @apply .block .bg-grey-light .w-full;
+            @apply .block .w-full;
 
             content: '';
             height: 1px;
