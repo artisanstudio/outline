@@ -17,7 +17,7 @@
 
         <script>
             window.Admin = {!! json_encode([
-                'notification' => flash()->get(),
+                'notification' => Facades\Artisan\Outline\Http\Flash::get(),
             ]) !!}
         </script>
     </head>
