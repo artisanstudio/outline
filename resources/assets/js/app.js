@@ -35,6 +35,7 @@ import Alert from './mixins/Alert.js'
 
 Vue.component('search-overlay', require('./components/SearchOverlay'))
 Vue.component('card', require('./components/Card'))
+Vue.component('asset-field', require('./components/AssetField'))
 Vue.component('menu-item', require('./components/MenuItem'))
 
 Vue.component('csrf', {

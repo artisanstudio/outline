@@ -54,7 +54,7 @@
         @apply .px-6 .my-3;
 
         &:after {
-            @apply .block .bg-grey-light .w-full;
+            @apply .block .w-full;
 
             content: '';
             height: 1px;
