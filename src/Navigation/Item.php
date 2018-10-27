@@ -112,6 +112,19 @@ class Item
     }
 
     /**
+     * Add a tag for the right side.
+     *
+     * @param  string  $tag
+     * @return Item
+     */
+    public function tag($tag)
+    {
+        $this->tag = $tag;
+
+        return $this;
+    }
+
+    /**
      * Get the state if the current route is within scope.
      *
      * @return string

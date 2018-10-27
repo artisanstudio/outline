@@ -16,6 +16,10 @@
                             <i class="icon {{ $item->icon }}"></i>
 
                             {{ $item->name }}
+
+                            @if($item->tag ?? false)
+                            <small style="font-size: 9px; padding: 2px 6px;" class="tag tracking-wide uppercase ml-4 text-white bg-primary opacity-75 rounded-full">{{ $item->tag }}</small>
+                            @endif
                         </a>
                     </li>
                 @endif
