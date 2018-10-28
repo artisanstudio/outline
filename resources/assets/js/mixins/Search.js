@@ -19,6 +19,10 @@ export default {
         })
 
         window.addEventListener('paste', (event) => {
+            if (this != document.activeElement && document.body != document.activeElement) {
+                return;
+            }
+
             this.search.open = true
 
             this.$nextTick(() => {
