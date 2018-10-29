@@ -48,14 +48,7 @@ Vue.component('csrf', {
     },
 })
 
-/**
- * Hook user-land components before mounting our Vue instance.
- */
-window.Outline.boot(Vue)
-
 const app = new Vue({
-    el: '#app',
-
     store,
 
     mixins: [ Sidebar, Search, Alert ],
@@ -76,3 +69,7 @@ const app = new Vue({
         }
     },
 })
+
+window.Outline.boot(Vue, app)
+
+app.$mount('#app')
