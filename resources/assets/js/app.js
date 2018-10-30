@@ -70,6 +70,6 @@ const app = new Vue({
     },
 })
 
-window.Outline.boot(Vue, app)
+window.Outline.boot.bind(app)(Vue)
 
 app.$mount('#app')
