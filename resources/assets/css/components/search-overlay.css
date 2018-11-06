@@ -20,7 +20,7 @@
     }
 
     > .close > .shortcut {
-        @apply .block .text-14 .no-underline;
+        @apply .block .no-underline .ms-base;
     }
 
     > .input {
@@ -66,7 +66,7 @@
 
 .search-result-set {
     > .header > .title {
-        @apply .uppercase .ms-base .border-b .pb-2 .text-14;
+        @apply .uppercase .ms-base .border-b .pb-2;
     }
 
     > .results {
@@ -90,6 +90,6 @@
     }
 
     > .results > .result > .content > .subtitle {
-        @apply .ms-base .text-14 .text-grey-darker;
+        @apply .ms-base .text-grey-darker;
     }
 }

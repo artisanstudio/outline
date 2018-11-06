@@ -1,7 +1,7 @@
 export default {
     data() {
         return {
-            isSearching: false,
+            search: { open: false },
         }
     },
 
@@ -10,16 +10,20 @@ export default {
             event.preventDefault()
 
             if (event.key === '/') {
-                this.isSearching = true
+                this.search.open = true
             }
 
             if (event.key === 'Escape') {
-                this.isSearching = false
+                this.search.open = false
             }
         })
 
         window.addEventListener('paste', (event) => {
-            this.isSearching = true
+            if (this != document.activeElement && document.body != document.activeElement) {
+                return;
+            }
+
+            this.search.open = true
 
             this.$nextTick(() => {
                 document.querySelector('#global-search').focus()
@@ -30,11 +34,11 @@ export default {
 
     methods: {
         openGlobalSearch() {
-            this.isSearching = true
+            this.search.open = true
         },
 
         closeGlobalSearch() {
-            this.isSearching = false
+            this.search.open = false
         },
     },
 }

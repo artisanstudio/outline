@@ -17,4 +17,9 @@ return [
      */
     'search' => [
     ],
+
+    /**
+     * Where the admin will go when they log out.
+     */
+    'logout_redirect' => '/',
 ];

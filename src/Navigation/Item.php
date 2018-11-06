@@ -11,7 +11,14 @@ class Item
      *
      * @var string
      */
-    const ACTIVE = '-active';
+    const Active = '-active';
+
+    /**
+     * Separator special name.
+     *
+     * @var string
+     */
+    const Separator = '-separator';
 
     /**
      * The routes to look up to see if the item is active.
@@ -21,15 +28,32 @@ class Item
     protected $scope;
 
     /**
+     * Route to link to.
+     *
+     * @param string
+     */
+    public $link = null;
+
+    /**
      * Create a new navigation item instance.
      *
-     * @param  array  $attributes
+     * @param  string  $name
      * @return Item
      */
     public function __construct($name)
     {
         $this->name  = $name;
         $this->scope = new Collection;
+    }
+
+    /**
+     * Create a new separator item.
+     *
+     * @return Item
+     */
+    public static function separator()
+    {
+        return new Item(static::Separator);
     }
 
     /**
@@ -40,7 +64,7 @@ class Item
      */
     public function link($link)
     {
-        $this->link = $link;
+        $this->link = str_start($link, config('app.url'));
 
         return $this;
     }
@@ -49,11 +73,14 @@ class Item
      * Assign the link using a route name instead.
      *
      * @param  string  $route
+     * @param  string  $parameters
      * @return Item
      */
-    public function route($route)
+    public function route($route, $parameters = [])
     {
-        return $this->link(route($route));
+        return $this->link(
+            route($route, $parameters, true)
+        );
     }
 
     /**
@@ -79,7 +106,20 @@ class Item
      */
     public function scope($routes)
     {
-        $this->scope->push($routes);
+        $this->scope = $this->scope->merge($routes);
+
+        return $this;
+    }
+
+    /**
+     * Add a tag for the right side.
+     *
+     * @param  string  $tag
+     * @return Item
+     */
+    public function tag($tag)
+    {
+        $this->tag = $tag;
 
         return $this;
     }
@@ -97,7 +137,7 @@ class Item
             return null;
         }
 
-        return static::ACTIVE;
+        return static::Active;
     }
 
     /**
@@ -108,7 +148,17 @@ class Item
     private function withinScope()
     {
         return $this->scope->contains(function ($route) {
-            return str_contains(url()->current(), $route);
+            return url()->current() == $route;
         });
+    }
+
+    /**
+     * Check if the item is a separator.
+     *
+     * @return boolean
+     */
+    public function isSeparator()
+    {
+        return $this->name === static::Separator;
     }
 }

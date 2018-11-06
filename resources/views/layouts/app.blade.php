@@ -14,6 +14,12 @@
         <link href="/vendor/outline/css/app.css" rel="stylesheet">
 
         @stack('head')
+
+        <script>
+            window.Admin = {!! json_encode([
+                'notification' => Facades\Artisan\Outline\Http\Flash::get(),
+            ]) !!}
+        </script>
     </head>
 
     <body>
@@ -35,11 +41,15 @@
 
             <transition name="fade">
                 <search-overlay
-                    v-if="isSearching"
+                    v-if="search.open"
                     @close="closeGlobalSearch()"
                     api="/{{ config('outline.prefix') }}/search">
                 </search-overlay>
             </transition>
+
+            <notifications
+                classes="alert-message" width="375"
+                position="bottom right" animation-type="velocity" />
         </section>
 
         <script type="text/javascript" src="/vendor/outline/js/manifest.js"></script>

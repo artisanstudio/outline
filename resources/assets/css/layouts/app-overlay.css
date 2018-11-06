@@ -1,5 +1,7 @@
 .app-overlay {
-    @apply .fixed .h-screen .w-screen .bg-white .z-40 .cursor-pointer .opacity-75;
+    @apply .fixed .h-screen .w-screen .bg-white .z-40 .cursor-pointer;
+
+    opacity: 0.40;
 }
 
 @screen md {

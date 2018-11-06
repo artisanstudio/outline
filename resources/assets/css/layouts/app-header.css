@@ -1,8 +1,39 @@
 .app-header {
-    @apply .py-4 .px-6 .flex;
+    @apply .py-4 .px-6 .flex .items-center;
 
     > .hamburger {
-        @apply .py-2 .px-3 .ml-auto;
+        @apply .ml-auto;
+    }
+
+    > .hamburger.-active {
+        --button-text: config('colors.black');
+        --button-bg: config('colors.grey-lightest');
+    }
+
+    > .hamburger:focus {
+        outline: none;
+    }
+
+    > .hamburger:hover {
+        --button-text: config('colors.black');
+        --button-bg: config('colors.grey-lightest');
+    }
+}
+
+.global-search {
+    @apply .bg-white .rounded-full .py-2 .px-4
+           .tracking-tight .text-left .text-grey-darker
+           .flex .items-center;
+
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.035);
+    width: 250px;
+
+    > .icon {
+        @apply .mr-1 .text-grey-dark;
+    }
+
+    &:focus {
+        outline: none;
     }
 }
 

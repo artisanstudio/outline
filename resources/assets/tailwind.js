@@ -49,17 +49,20 @@ let colors = {
     'grey-darkest':  '#3d4852',
     'grey-darker':   '#626a6d',
     'grey-dark':     '#9a9a9a',
-    'grey':          '#aaaeb1',
-    'grey-light':    '#efefef',
+    'grey':          '#cad0de',
+    'grey-light':    '#e8ebf1',
     'grey-lighter':  '#f1f1f1',
-    'grey-lightest': '#f7f7f7',
+    'grey-lightest': '#f6f7fa',
     'white':         '#ffffff',
-    'offwhite':      '#f7f7f7',
+    'offwhite':      '#fafbfc',
 
-    'blue':          '#1e8cf9',
-    'yellow':        '#fcd603',
-    'green':         '#03fc0d',
-    'red':           '#fc0303',
+    'blue':          '#0a69f8',
+    'green':         '#6ddc98',
+    'red':           '#f06276',
+    'yellow':        '#f4c769',
+
+    'orange':        '#ff8100',
+    'orange-light':  '#fff0d1',
 
     'artisan':       '#ff1d8d',
     'primary':       'var(--primary)',
@@ -187,7 +190,7 @@ module.exports = {
     */
 
     textSizes: {
-        '14': '14px',
+        '12': '12px',
     },
 
 
@@ -329,7 +332,7 @@ module.exports = {
     |
     */
 
-    borderColors: Object.assign({ default: colors['grey-lighter'] }, colors),
+    borderColors: Object.assign({ default: colors['grey-light'] }, colors),
 
 
     /*
@@ -396,6 +399,7 @@ module.exports = {
         'full':   '100%',
         'screen': '100vw',
 
+        'user-nav': '175px',
         'sidebar': '260px',
     },
 
@@ -607,6 +611,7 @@ module.exports = {
 
     negativeMargin: {
         '2px': '2px',
+        '4px': '4px',
         'px':  '1px',
         '0':   '0',
         '1':   '0.25rem',
@@ -638,6 +643,7 @@ module.exports = {
         default: '0 2px 4px 0 rgba(0,0,0,0.10)',
         'md':    '0 4px 8px 0 rgba(0,0,0,0.05), 0 2px 4px 0 rgba(0,0,0,0.05)',
         'lg':    '0 15px 30px 0 rgba(0,0,0,0.025), 0 5px 15px 0 rgba(0,0,0,0.025)',
+        'xl':    '0 15px 50px 0 rgba(0,0,0,0.075), 0 5px 15px 0 rgba(0,0,0,0.025)', //
         'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
         'none':  'none',
     },
@@ -806,7 +812,7 @@ module.exports = {
 
     plugins: [
         require('tailwindcss-modularscale')({
-            base:     16,
+            base:     14,
             ratio:    1.333, // Perfect Fourth
             variants: ['responsive'],
         }),

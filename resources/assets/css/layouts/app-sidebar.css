@@ -1,48 +1,89 @@
 .app-sidebar {
-    @apply .flex-no-shrink .flex-no-grow;
-    @apply .bg-primary .w-sidebar .p-8 .fixed .pin .z-50;
+    @apply .bg-offwhite .flex-no-shrink .flex-no-grow .py-6 .w-sidebar .fixed .pin .z-50;
 
     > .title {
-        @apply .text-white .ms-lg .px-4 .mb-8;
-
-        letter-spacing: -0.011em;
+        @apply .ms-lg .px-8 .text-black .mb-6 .tracking-tight;
     }
 
     > .navigation {
-        @apply .text-14 .text-white;
+        @apply .text-white;
+    }
+}
+
+.current-user {
+    display: grid;
+    grid-template-columns: 28% 72%;
+    grid-template-rows: 30px 30px;
+
+    @apply .px-8;
+
+    > .avatar {
+        grid-row: span 2;
+
+        @apply .rounded-full .h-10 .self-center;
+    }
+
+    > .name {
+        grid-row: 1;
+        grid-column: 2;
+
+        @apply .font-bold .flex .self-end;
+    }
+
+    > .greeting {
+        grid-row: 2;
+        grid-column: 2;
+        font-size: 12px;
+
+        @apply .text-grey-darker;
     }
 }
 
 .sidebar-navigation {
+    @apply .tracking-tight;
+
     > .links {
         @apply .list-reset;
     }
 
     > .links > .item {
-        @apply .mb-2;
+        @apply .px-8 .mb-2 .py-2;
     }
 
-    > .links > .item > .button {
-        --button-text: config('colors.white');
+    > .links > .item.-separator {
+        @apply .px-6 .my-2;
+
+        &:after {
+            @apply .block .w-full;
+
+            content: '';
+            height: 1px;
+        }
     }
 
-    > .links > .item > .button:hover {
-        --button-bg:     config('colors.white');
-        --button-border: config('colors.white');
-        --button-text:   config('colors.primary');
+    > .links > .item.-active {
+        @apply .bg-grey-lighter .border-l-4 .border-blue;
+
+        > .link {
+            @apply .-ml-4px;
+        }
     }
 
-    > .links > .item.-active > .button {
-        --button-bg:     config('colors.white');
-        --button-border: config('colors.white');
-        --button-text:   config('colors.primary');
+    > .links > .item > .link {
+        @apply .flex .items-center .text-black .font-semibold;
+    }
 
-        @apply .font-bold .shadow-md;
+    > .links > .item > .link > .icon {
+        @apply .mr-5 .opacity-50;
+    }
+
+    > .links > .item > .link:hover {
+        @apply .text-primary;
     }
 }
 
 @screen md {
     .app-sidebar {
-        @apply .block .px-6 .static;
+        @apply .block .static;
     }
 }

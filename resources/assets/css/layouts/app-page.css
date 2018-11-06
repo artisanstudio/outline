@@ -1,13 +1,61 @@
 .app-page {
-    > .header > .title {
-        @apply .ms-2xl .tracking-tight;
+    @apply .p-6 .pb-16;
+}
+
+.app-page > .header {
+    display: grid;
+    grid-column-gap: 24px;
+
+    > .title {
+        @apply .ms-2xl;
+
+        letter-spacing: -0.05em;
     }
 
-    > .header > .caption {
+    > .caption {
         @apply .text-grey-darker;
     }
 
-    > .header > .caption > p + p {
+    > .caption > p + p {
         @apply .mt-2;
+    }
+
+    > .actions {
+        @apply .mt-4;
+    }
+}
+
+@screen sm {
+    .app-page > .header {
+        grid-template-columns: auto auto;
+
+        > .title {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        > .caption {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        > .actions {
+            grid-column: 2;
+            grid-row: span 2;
+
+            @apply .mt-0 .self-center .ml-auto;
+        }
+    }
+}
+
+@screen md {
+    .app-page {
+        @apply .p-8 .pt-6 .pb-16;
+    }
+
+    .app-page > .header {
+        > .caption {
+            @apply .max-w-sm;
+        }
     }
 }

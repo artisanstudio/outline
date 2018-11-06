@@ -1,5 +1,5 @@
 .card {
-    @apply .relative .border .rounded;
+    @apply .relative .border .rounded .bg-white;
 
     &.-active, &:hover {
         @apply .shadow-md;
@@ -56,7 +56,7 @@
     }
 
     > .content {
-        @apply .no-underline .text-14 .text-grey-darkest .h-full
+        @apply .no-underline .text-grey-darkest .h-full
                .flex .flex-col;
     }
 }
@@ -80,7 +80,7 @@
     }
 
     > .menu-items {
-        @apply .list-reset .m-0 .p-0 .text-14;
+        @apply .list-reset .m-0 .p-0;
     }
 
     a, button, form {

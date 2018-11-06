@@ -1,0 +1,36 @@
+.alert-message {
+    @apply .py-3 .px-5 .shadow-xl .bg-white
+           .border-l-4 .border-blue;
+
+    @apply .mb-6 .mr-6;
+
+    > .notification-title {
+        @apply .tracking-tight .font-bold .text-grey-darkest;
+    }
+
+    > .notification-content {
+        @apply .text-grey-darker .italic;
+    }
+
+    > .notification-content strong {
+        @apply .font-semibold;
+    }
+
+    &.warn {
+        @apply .border-yellow;
+    }
+
+    &.error {
+        @apply .border-red;
+    }
+
+    &.success {
+        @apply .border-green;
+    }
+}
+
+@screen md {
+    .alert-message {
+        @apply .mb-8 .mr-8;
+    }
+}

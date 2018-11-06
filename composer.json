@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "spatie/laravel-blade-x": "^2.0"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6"

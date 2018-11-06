@@ -54,6 +54,10 @@
         --button-border: config('colors.transparent');
     }
 
+    &.-small {
+        @apply .font-medium .tracking-tight;
+    }
+
     &.-with-icon {
         @apply .items-center;
     }

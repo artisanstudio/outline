@@ -2,7 +2,7 @@
     @apply .relative;
 
     > .label {
-        @apply .block .font-semibold .mb-2 .text-14;
+        @apply .mb-1 .block .font-semibold .text-grey-darkest;
     }
 
     > .label > .optional {
@@ -10,7 +10,7 @@
     }
 
     > .control > .input {
-        @apply .border .border-grey-lighter .bg-white .rounded-sm .w-full .py-3 .px-4 .block;
+        @apply .border .bg-white .rounded-sm .w-full .p-3 .block .tracking-tight;
 
         outline: none;
         resize:  none;
@@ -20,48 +20,81 @@
         @apply .bg-grey-light;
     }
 
+    > .control > textarea.input {
+        @apply .h-48;
+    }
+
+    > .control > .input:focus {
+        outline: 1px solid config('colors.primary');
+    }
+
     > .message {
-        @apply .italic .m-0 .mt-2 .text-14 .leading-tight;
+        @apply .italic .m-0 .mt-2 .leading-tight;
     }
 
     > .hint {
-        @apply .text-14 .p-4 .bg-grey-lighter .text-grey-darkest .italic .leading-none;
+        @apply .px-4 .py-3 .bg-grey-lighter .text-grey-darkest .italic .leading-none .rounded-b-sm;
+    }
+}
+
+.form-field.-icon {
+    > .control {
+        @apply .flex;
     }
 
-    &.-error {
-        > .control > .input {
-            border-color: #FFB263;
-            background-color: #FFF0D1;
-        }
-
-        > .message {
-            color: #FFB263;
-        }
+    > .control > .icon {
+        @apply .border .px-4
+               .bg-grey-lightest .rounded-sm
+               .tracking-tight .text-grey-dark .roman .font-semibold
+               .flex .items-center .justify-center;
     }
 
-    &.-success {
-        > .control > .input {
-            border-color: var(--green);
-            background-color: #D4FFD1;
-        }
-
-        > .message {
-            color: var(--green);
-        }
-    }
-
-    &.-with-icon {
-        > .control {
-            @apply .flex;
-        }
-
-        > .control > .icon {
-            @apply .border .border-r-0 .px-3 .text-grey-darker .rounded-l-sm
-                   .flex .items-center .justify-center;
-        }
-
+    &.-left {
         > .control > .input {
             @apply .rounded-l-none;
         }
+
+        > .control > .icon.-left {
+            @apply .border-r-0 .rounded-r-none;
+        }
+    }
+
+    &.-right {
+        > .control > .input {
+            @apply .rounded-r-none;
+        }
+
+        > .control > .icon.-right {
+            @apply .border-l-0 .rounded-l-none;
+        }
+    }
+}
+
+.form-field.-error {
+    > .control > .input {
+        border-color: config('colors.orange');
+        background-color: config('colors.orange-light');
+    }
+
+    > .message {
+        color: config('colors.orange');
+    }
+}
+
+
+.form-field.-success {
+    > .control > .input {
+        border-color: var(--green);
+        background-color: #D4FFD1;
+    }
+
+    > .message {
+        color: var(--green);
+    }
+}
+
+.form-field.-hint {
+    > .control > .input {
+        @apply .rounded-b-none;
     }
 }

@@ -2,8 +2,10 @@
 
 namespace Artisan\Outline;
 
-use Facades\Artisan\Outline\Outline;
 use Illuminate\Support\Facades\Route;
+use Spatie\BladeX\Facades\BladeX;
+use Facades\Artisan\Outline\Outline;
+use Artisan\Outline\Components\Field;
 
 class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -17,6 +19,45 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->defineAssetPublishing();
         $this->defineConfigPublishing();
         $this->shareSidebarNavigation();
+
+        $this->registerComponents();
+        $this->registerLayouts();
+    }
+
+    /**
+     * Register the custom blade components.
+     *
+     * @return void
+     */
+    private function registerComponents()
+    {
+        BladeX::prefix('outline');
+
+        BladeX::component('outline::components.alert-message')
+            ->tag('alert-message');
+
+        BladeX::component('outline::components.text-field')
+            ->viewModel(Field::class)
+            ->tag('text-field');
+
+        BladeX::component('outline::components.password-field')
+            ->viewModel(Field::class)
+            ->tag('password-field');
+
+        BladeX::component('outline::components.long-text-field')
+            ->viewModel(Field::class)
+            ->tag('long-text-field');
+    }
+
+    /**
+     * Register blade-x layouts and stuff.
+     *
+     * @return void
+     */
+    public function registerLayouts()
+    {
+        BladeX::component('outline::components.page')
+            ->tag('page');
     }
 
     /**
@@ -41,7 +82,7 @@ class OutlineServiceProvider extends \Illuminate\Support\ServiceProvider
         $configPath = __DIR__ . '/../config/outline.php';
 
         $this->publishes(
-            [$configPath => config_path('semaphore.php')],
+            [$configPath => config_path('outline.php')],
             'outline-config'
         );
     }
