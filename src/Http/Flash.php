@@ -46,4 +46,9 @@ class Flash
             'content' => $message,
         ]));
     }
+
+    public function toArray()
+    {
+        return optional($this->get())->toArray();
+    }
 }
